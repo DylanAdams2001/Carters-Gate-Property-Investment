@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free BRRR Blueprint — Carters Gate Property Investment</title>
+  <meta name="description" content="Download the exact BRRR Blueprint our clients use to build self-funding UK property portfolios. Free instant access.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gold: #C9A227;
+      --gold-hover: #E0B830;
+      --black: #1A1A1A;
+      --white: #FFFFFF;
+      --light-grey: #F1F1F1;
+      --mid-grey: #555555;
+      --dark-navy: #1A1040;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Figtree', sans-serif; color: var(--black); background: var(--white); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; }
+
+    /* HEADER */
+    .header {
+      background: var(--black);
+      padding: 18px 24px;
+      display: flex; align-items: center; justify-content: center;
+      position: sticky; top: 0; z-index: 100;
+      border-bottom: 1px solid rgba(201,162,39,0.15);
+    }
+    .logo { display: flex; align-items: center; text-decoration: none; }
+    .logo-img { height: 56px; width: auto; border-radius: 6px; display: block; }
+
+    /* HERO */
+    .hero {
+      background: var(--black);
+      background-image: radial-gradient(ellipse at 70% 0%, rgba(201,162,39,0.09) 0%, transparent 55%);
+      padding: 68px 24px 84px; text-align: center;
+    }
+    .hero-label {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: rgba(201,162,39,0.12); border: 1px solid rgba(201,162,39,0.35);
+      color: var(--gold); font-family: 'Montserrat', sans-serif; font-weight: 700;
+      font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase;
+      padding: 8px 18px; border-radius: 100px; margin-bottom: 30px;
+    }
+    .hero h1 {
+      font-size: clamp(30px, 5.5vw, 56px); font-weight: 800; color: var(--white);
+      line-height: 1.12; max-width: 840px; margin: 0 auto 22px; letter-spacing: -0.5px;
+    }
+    .hero h1 em { color: var(--gold); font-style: normal; }
+    .hero-sub { font-size: 17px; color: rgba(255,255,255,0.58); max-width: 520px; margin: 0 auto 38px; }
+    .hero-trust { display: flex; align-items: center; justify-content: center; gap: 28px; flex-wrap: wrap; margin-bottom: 42px; }
+    .trust-pill { display: flex; align-items: center; gap: 7px; font-size: 13px; color: rgba(255,255,255,0.72); font-weight: 500; }
+    .trust-pill .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
+
+    /* FORM CARD */
+    .form-card {
+      background: var(--white); border-radius: 20px;
+      max-width: 580px; margin: 0 auto; padding: 40px 44px;
+      box-shadow: 0 32px 80px rgba(0,0,0,0.45), 0 0 0 1px rgba(201,162,39,0.12);
+    }
+    .progress-wrap { margin-bottom: 30px; }
+    .progress-steps { display: flex; justify-content: space-between; margin-bottom: 9px; }
+    .progress-step-lbl {
+      font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 700;
+      letter-spacing: 1.5px; text-transform: uppercase; color: #C8C8C8; transition: color 0.3s;
+    }
+    .progress-step-lbl.active { color: var(--gold); }
+    .progress-bar { height: 4px; background: #EBEBEB; border-radius: 4px; overflow: hidden; }
+    .progress-fill { height: 100%; background: linear-gradient(90deg, var(--gold), var(--gold-hover)); border-radius: 4px; transition: width 0.5s ease; }
+
+    .step { display: none; }
+    .step.active { display: block; animation: fadeUp 0.3s ease; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+    .step-eyebrow { font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 2px; color: var(--gold); text-transform: uppercase; margin-bottom: 10px; }
+    .step h3 { font-size: 20px; font-weight: 700; color: var(--black); margin-bottom: 24px; line-height: 1.35; }
+
+    .options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .option-btn {
+      padding: 16px 14px; border: 2px solid #E5E5E5; border-radius: 12px; background: var(--white);
+      cursor: pointer; font-family: 'Figtree', sans-serif; font-size: 15px; font-weight: 500;
+      color: var(--black); transition: all 0.2s ease; text-align: center; line-height: 1.3;
+    }
+    .option-btn:hover { border-color: var(--gold); background: #FFFBF0; transform: translateY(-1px); }
+    .option-btn.selected { border-color: var(--gold); background: #FFFBF0; font-weight: 600; }
+
+    .disqualify-msg {
+      display: none; background: #FFFBEE; border: 1px solid rgba(201,162,39,0.4);
+      border-radius: 12px; padding: 18px; margin-top: 16px;
+      font-size: 14px; color: #7A5C00; line-height: 1.65;
+    }
+    .disqualify-btn {
+      display: block; width: 100%; padding: 14px; margin-top: 14px;
+      background: var(--gold); color: var(--black); border: none; border-radius: 10px;
+      font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 700;
+      letter-spacing: 1px; text-transform: uppercase; cursor: pointer; transition: background 0.2s;
+    }
+    .disqualify-btn:hover { background: var(--gold-hover); }
+
+    .input-group { margin-bottom: 14px; }
+    .input-label { display: block; font-size: 13px; font-weight: 600; color: var(--mid-grey); margin-bottom: 6px; }
+    .input-field {
+      width: 100%; padding: 14px 16px; border: 2px solid #E5E5E5; border-radius: 12px;
+      font-family: 'Figtree', sans-serif; font-size: 16px; color: var(--black);
+      outline: none; transition: border-color 0.2s; background: #FAFAFA;
+    }
+    .input-field:focus { border-color: var(--gold); background: #FFFBF0; }
+    .input-field.error { border-color: #E53E3E; }
+
+    .cta-btn {
+      display: block; width: 100%; padding: 18px; background: var(--gold); color: var(--black);
+      border: none; border-radius: 12px; font-family: 'Montserrat', sans-serif; font-size: 14px;
+      font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; cursor: pointer;
+      transition: all 0.25s ease; margin-top: 8px; text-decoration: none; text-align: center;
+    }
+    .cta-btn:hover { background: var(--gold-hover); transform: translateY(-2px); box-shadow: 0 10px 30px rgba(201,162,39,0.35); }
+    .trust-note { display: flex; align-items: center; justify-content: center; gap: 6px; font-size: 12px; color: #AAA; margin-top: 12px; }
+
+    .success-wrap { text-align: center; padding: 16px 0; }
+    .success-icon {
+      width: 72px; height: 72px; background: linear-gradient(135deg, var(--gold), var(--gold-hover));
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 20px; font-size: 32px; color: var(--black); font-weight: 700;
+    }
+    .success-wrap h3 { font-size: 26px; font-weight: 800; color: var(--black); margin-bottom: 10px; }
+    .success-wrap p { font-size: 15px; color: var(--mid-grey); margin-bottom: 28px; line-height: 1.65; }
+
+    /* PROOF BAR */
+    .proof-bar { background: var(--gold); padding: 14px 24px; }
+    .proof-bar-inner { max-width: 1000px; margin: 0 auto; display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap; }
+    .proof-item { display: flex; align-items: center; gap: 8px; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 13px; color: var(--black); white-space: nowrap; }
+
+    /* SECTIONS */
+    .section { padding: 88px 24px; }
+    .section-grey { background: var(--light-grey); }
+    .container { max-width: 940px; margin: 0 auto; }
+    .section-eyebrow { display: block; text-align: center; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 10px; letter-spacing: 2.5px; color: var(--gold); text-transform: uppercase; margin-bottom: 12px; }
+    .section-title { font-size: clamp(28px, 4vw, 44px); font-weight: 800; text-align: center; line-height: 1.15; letter-spacing: -0.3px; margin-bottom: 14px; color: var(--black); }
+    .section-sub { font-size: 17px; color: var(--mid-grey); text-align: center; max-width: 580px; margin: 0 auto 52px; line-height: 1.7; }
+
+    /* BLUEPRINT GRID */
+    .blueprint-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .blueprint-card { background: var(--white); border-radius: 14px; padding: 30px 28px; border-left: 4px solid var(--gold); box-shadow: 0 2px 12px rgba(0,0,0,0.06); transition: transform 0.2s, box-shadow 0.2s; }
+    .blueprint-card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(0,0,0,0.1); }
+    .blueprint-card.full { grid-column: span 2; }
+    .bp-num { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 44px; color: var(--gold); opacity: 0.2; line-height: 1; margin-bottom: 6px; }
+    .blueprint-card h4 { font-size: 16px; font-weight: 700; color: var(--black); margin-bottom: 8px; line-height: 1.35; }
+    .blueprint-card p { font-size: 14px; color: var(--mid-grey); line-height: 1.7; }
+
+    /* TESTIMONIALS */
+    .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .t-card { background: var(--white); border-radius: 14px; padding: 26px; box-shadow: 0 4px 20px rgba(0,0,0,0.07); display: flex; flex-direction: column; }
+    .t-stars { color: var(--gold); font-size: 13px; margin-bottom: 12px; letter-spacing: 1px; }
+    .t-text { font-size: 14px; color: #333; line-height: 1.75; flex: 1; margin-bottom: 18px; font-style: italic; }
+    .t-author { display: flex; align-items: center; gap: 10px; }
+    .t-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--gold); display: flex; align-items: center; justify-content: center; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 13px; color: var(--black); flex-shrink: 0; }
+    .t-name { font-weight: 700; font-size: 14px; color: var(--black); }
+    .t-role { font-size: 12px; color: var(--mid-grey); margin-top: 1px; }
+
+    /* FAQ */
+    .faq-list { max-width: 720px; margin: 0 auto; }
+    .faq-item { border-bottom: 1px solid #E8E8E8; }
+    .faq-item:first-child { border-top: 1px solid #E8E8E8; }
+    .faq-trigger {
+      width: 100%; text-align: left; padding: 22px 0; background: none; border: none; cursor: pointer;
+      font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 600; color: var(--black);
+      display: flex; justify-content: space-between; align-items: center; gap: 20px; transition: color 0.2s;
+    }
+    .faq-trigger:hover { color: var(--gold); }
+    .faq-icon { font-size: 22px; font-weight: 300; color: var(--gold); flex-shrink: 0; transition: transform 0.25s ease; line-height: 1; }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+    .faq-body { font-size: 15px; color: var(--mid-grey); line-height: 1.75; max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.25s ease; }
+    .faq-item.open .faq-body { max-height: 400px; padding-bottom: 22px; }
+
+    /* BOTTOM CTA */
+    .bottom-cta {
+      background: var(--black);
+      background-image: radial-gradient(ellipse at 30% 100%, rgba(201,162,39,0.1) 0%, transparent 55%);
+      padding: 92px 24px; text-align: center;
+    }
+    .bottom-cta h2 { font-size: clamp(26px, 4.5vw, 46px); font-weight: 800; color: var(--white); margin-bottom: 16px; letter-spacing: -0.3px; }
+    .bottom-cta h2 em { color: var(--gold); font-style: normal; }
+    .bottom-cta p { font-size: 17px; color: rgba(255,255,255,0.58); max-width: 480px; margin: 0 auto 36px; }
+    .scroll-btn {
+      display: inline-block; padding: 18px 44px; background: var(--gold); color: var(--black);
+      border: none; border-radius: 12px; font-family: 'Montserrat', sans-serif; font-size: 14px;
+      font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; cursor: pointer; transition: all 0.25s ease;
+    }
+    .scroll-btn:hover { background: var(--gold-hover); transform: translateY(-2px); box-shadow: 0 12px 36px rgba(201,162,39,0.35); }
+
+    /* FOOTER */
+    .footer { background: var(--dark-navy); padding: 48px 24px; text-align: center; }
+    .footer-logo { display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 22px; }
+    .footer-logo .logo-emblem { width: 38px; height: 38px; }
+    .footer-logo .logo-emblem svg { width: 20px; height: 20px; }
+    .footer-logo .logo-main { font-size: 14px; letter-spacing: 2.5px; }
+    .footer-links { display: flex; align-items: center; justify-content: center; gap: 28px; flex-wrap: wrap; margin-bottom: 20px; }
+    .footer-links a { font-size: 13px; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-copy { font-size: 12px; color: rgba(255,255,255,0.22); line-height: 1.8; }
+
+    /* RESPONSIVE */
+    @media (max-width: 700px) {
+      .form-card { padding: 28px 20px; }
+      .options-grid { grid-template-columns: 1fr; }
+      .blueprint-grid { grid-template-columns: 1fr; }
+      .blueprint-card.full { grid-column: span 1; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .hero { padding: 48px 16px 68px; }
+      .section { padding: 60px 16px; }
+      .proof-bar-inner { gap: 18px; }
+    }
+    @media (min-width: 701px) and (max-width: 960px) {
+      .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <a href="#" class="logo">
+    <img src="Assets/logo.jpg" alt="Carters Gate Property Investment" class="logo-img">
+  </a>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-label">⭐ Free Download &mdash; Instant Access</div>
+  <h1>The Exact <em>BRRR Blueprint</em><br>Our Clients Use to Build a<br>Self-Funding UK Property Portfolio</h1>
+  <p class="hero-sub">Buy &middot; Renovate &middot; Rent &middot; Refinance &middot; Repeat &mdash; the complete system, yours free.</p>
+  <div class="hero-trust">
+    <div class="trust-pill"><span class="dot"></span> &#9733;&#9733;&#9733;&#9733;&#9733; 5.0 Google Rating</div>
+    <div class="trust-pill"><span class="dot"></span> 40+ Properties Delivered</div>
+    <div class="trust-pill"><span class="dot"></span> Trusted by UK Investors</div>
+  </div>
+
+  <!-- MULTI-STEP FORM -->
+  <div class="form-card">
+    <div class="progress-wrap">
+      <div class="progress-steps">
+        <span class="progress-step-lbl active" id="plbl1">Capital</span>
+        <span class="progress-step-lbl" id="plbl2">Timeline</span>
+        <span class="progress-step-lbl" id="plbl3">Goal</span>
+        <span class="progress-step-lbl" id="plbl4">Details</span>
+      </div>
+      <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:25%"></div></div>
+    </div>
+
+    <!-- Step 1 -->
+    <div class="step active" id="step1">
+      <div class="step-eyebrow">Step 1 of 4</div>
+      <h3>How much capital do you have available to invest?</h3>
+      <div class="options-grid">
+        <button class="option-btn" onclick="selectCapital(this, true)">Under &pound;50k</button>
+        <button class="option-btn" onclick="selectCapital(this, true)">&pound;50k &ndash; &pound;100k</button>
+        <button class="option-btn" onclick="selectCapital(this, false)">&pound;100k &ndash; &pound;200k</button>
+        <button class="option-btn" onclick="selectCapital(this, false)">&pound;200k+</button>
+      </div>
+      <div class="disqualify-msg" id="disqualifyMsg">
+        <strong>&#9888;&#65039; Heads up &mdash;</strong> our BRRR strategy typically requires a minimum of <strong>&pound;100,000</strong> in available capital to be viable in today&rsquo;s UK market. You can still download the blueprint to plan your path forward.
+        <button class="disqualify-btn" onclick="goToStep(2)">DOWNLOAD THE BLUEPRINT ANYWAY &rarr;</button>
+      </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="step" id="step2">
+      <div class="step-eyebrow">Step 2 of 4</div>
+      <h3>When are you looking to make your first (or next) BRRR investment?</h3>
+      <div class="options-grid">
+        <button class="option-btn" onclick="quickSelect(this, 3)">Within 3 months</button>
+        <button class="option-btn" onclick="quickSelect(this, 3)">3 &ndash; 6 months</button>
+        <button class="option-btn" onclick="quickSelect(this, 3)">6 &ndash; 12 months</button>
+        <button class="option-btn" onclick="quickSelect(this, 3)">12 months+</button>
+      </div>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="step" id="step3">
+      <div class="step-eyebrow">Step 3 of 4</div>
+      <h3>What is your primary investment goal?</h3>
+      <div class="options-grid">
+        <button class="option-btn" onclick="quickSelect(this, 4)">Monthly Cash Flow</button>
+        <button class="option-btn" onclick="quickSelect(this, 4)">Equity &amp; Capital Growth</button>
+        <button class="option-btn" onclick="quickSelect(this, 4)" style="grid-column:span 2">Both &mdash; Cash Flow &amp; Long-Term Wealth</button>
+      </div>
+    </div>
+
+    <!-- Step 4 -->
+    <div class="step" id="step4">
+      <div class="step-eyebrow">Step 4 of 4 &mdash; Almost There!</div>
+      <h3>Where should we send your free BRRR Blueprint?</h3>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+        <div class="input-group">
+          <label class="input-label" for="firstNameInput">First Name</label>
+          <input type="text" class="input-field" id="firstNameInput" placeholder="e.g. James" autocomplete="given-name">
+        </div>
+        <div class="input-group">
+          <label class="input-label" for="lastNameInput">Last Name</label>
+          <input type="text" class="input-field" id="lastNameInput" placeholder="e.g. Harrison" autocomplete="family-name">
+        </div>
+      </div>
+      <div class="input-group">
+        <label class="input-label" for="emailInput">Email Address</label>
+        <input type="email" class="input-field" id="emailInput" placeholder="e.g. james@example.com" autocomplete="email">
+      </div>
+      <div class="input-group">
+        <label class="input-label" for="phoneInput">UK Mobile Number</label>
+        <input type="tel" class="input-field" id="phoneInput" placeholder="e.g. 07700 900 123" autocomplete="tel">
+      </div>
+      <button class="cta-btn" onclick="submitForm()">SEND MY FREE BLUEPRINT &rarr;</button>
+      <p class="trust-note">&#128274; Your details are 100% private. No spam, ever.</p>
+    </div>
+
+    <!-- Step 5: Success -->
+    <div class="step" id="step5">
+      <div class="success-wrap">
+        <div class="success-icon">&#10003;</div>
+        <h3>Blueprint on its way!</h3>
+        <p>Your free BRRR Blueprint is being sent now. Take the next step and book your free 30-minute strategy call with a Carters Gate advisor.</p>
+        <a href="booking/" class="cta-btn">BOOK YOUR FREE STRATEGY CALL &rarr;</a>
+        <p class="trust-note" style="margin-top:14px">No pitch. No pressure. No commitment.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF BAR -->
+<div class="proof-bar">
+  <div class="proof-bar-inner">
+    <div class="proof-item">&#9733;&#9733;&#9733;&#9733;&#9733; 5.0 Google Rating</div>
+    <div class="proof-item">&#127960;&#65039; 40+ Properties Delivered</div>
+    <div class="proof-item">&#127468;&#127463; UK Investors Served</div>
+    <div class="proof-item">&#163; &pound;3M+ Portfolio Value Built</div>
+  </div>
+</div>
+
+<!-- BLUEPRINT PREVIEW -->
+<section class="section section-grey">
+  <div class="container">
+    <span class="section-eyebrow">What&rsquo;s Inside</span>
+    <h2 class="section-title">Your Free BRRR Blueprint Covers</h2>
+    <p class="section-sub">A step-by-step system for building a self-funding UK property portfolio using the Buy, Renovate, Rent, Refinance, Repeat strategy.</p>
+    <div class="blueprint-grid">
+      <div class="blueprint-card">
+        <div class="bp-num">01</div>
+        <h4>Deal Sourcing &mdash; Finding Below-Market-Value Properties</h4>
+        <p>The exact criteria we use to identify undervalued properties in high-demand UK corridors &mdash; before they reach the open market.</p>
+      </div>
+      <div class="blueprint-card">
+        <div class="bp-num">02</div>
+        <h4>Renovation Strategy &mdash; Forcing Equity Efficiently</h4>
+        <p>Which upgrades add the most value per pound spent and how to manage refurbishments to budget, on time, every time.</p>
+      </div>
+      <div class="blueprint-card">
+        <div class="bp-num">03</div>
+        <h4>Rental Optimisation &mdash; Maximising Monthly Yield</h4>
+        <p>How to structure tenancies to achieve 6&ndash;9% gross rental yields and attract long-term, reliable tenants in today&rsquo;s UK market.</p>
+      </div>
+      <div class="blueprint-card">
+        <div class="bp-num">04</div>
+        <h4>Refinancing Blueprint &mdash; Recycling Your Capital</h4>
+        <p>The exact refinancing strategy to pull equity tax-efficiently and recycle your original capital into your next deal.</p>
+      </div>
+      <div class="blueprint-card full">
+        <div class="bp-num">05</div>
+        <h4>The Repeat System &mdash; Scaling Without Tying Up Capital</h4>
+        <p>How our clients compound their portfolios deal by deal &mdash; using the same initial capital &mdash; creating a self-funding growth engine that builds wealth while you focus on your career.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section">
+  <div class="container">
+    <span class="section-eyebrow">Client Results</span>
+    <h2 class="section-title">What Our Investors Are Saying</h2>
+    <p class="section-sub">Real outcomes from real UK investors who followed the BRRR blueprint with Carters Gate.</p>
+    <div class="testimonials-grid">
+      <div class="t-card">
+        <div class="t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="t-text">&ldquo;Within 14 months we&rsquo;d recycled our full deposit into a second property. The BRRR system genuinely works &mdash; we&rsquo;re now generating &pound;1,850/month net across two properties.&rdquo;</p>
+        <div class="t-author"><div class="t-avatar">JH</div><div><div class="t-name">James H.</div><div class="t-role">IT Director &middot; Manchester</div></div></div>
+      </div>
+      <div class="t-card">
+        <div class="t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="t-text">&ldquo;Carters Gate found us a property 18% below market value. After renovation we had &pound;52k in forced equity and refinanced out 90% of our original deposit into the next deal.&rdquo;</p>
+        <div class="t-author"><div class="t-avatar">SR</div><div><div class="t-name">Sarah R.</div><div class="t-role">NHS Consultant &middot; Leeds</div></div></div>
+      </div>
+      <div class="t-card">
+        <div class="t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="t-text">&ldquo;As a busy accountant I had zero time to manage a project. Carters Gate handled everything &mdash; sourcing, renovation, tenants. I just signed contracts and received rental income.&rdquo;</p>
+        <div class="t-author"><div class="t-avatar">TK</div><div><div class="t-name">Thomas K.</div><div class="t-role">Chartered Accountant &middot; Birmingham</div></div></div>
+      </div>
+      <div class="t-card">
+        <div class="t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="t-text">&ldquo;Three properties in two years using the exact BRRR system. My portfolio is now valued at &pound;680k and generating consistent monthly cash flow. Exceptional service throughout.&rdquo;</p>
+        <div class="t-author"><div class="t-avatar">LC</div><div><div class="t-name">Lisa C.</div><div class="t-role">Portfolio Investor &middot; London</div></div></div>
+      </div>
+      <div class="t-card">
+        <div class="t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="t-text">&ldquo;The strategy call alone changed everything. They mapped out exactly how to structure my first deal and I went from curious to contracted within 6 weeks. Incredible support.&rdquo;</p>
+        <div class="t-author"><div class="t-avatar">MO</div><div><div class="t-name">Marcus O.</div><div class="t-role">Civil Engineer &middot; Bristol</div></div></div>
+      </div>
+      <div class="t-card">
+        <div class="t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="t-text">&ldquo;I was sceptical at first but the blueprint was genuinely eye-opening. &pound;47k in equity created in the first 10 months. We&rsquo;re already planning deal two with Carters Gate.&rdquo;</p>
+        <div class="t-author"><div class="t-avatar">RB</div><div><div class="t-name">Rachel B.</div><div class="t-role">GP &middot; Sheffield</div></div></div>
+      </div>
+      <div class="t-card">
+        <div class="t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="t-text">&ldquo;The done-for-you approach is perfect for someone working full time. My first BRRR deal completed in 11 months and I recycled 85% of my capital straight into deal number two.&rdquo;</p>
+        <div class="t-author"><div class="t-avatar">DW</div><div><div class="t-name">David W.</div><div class="t-role">Sales Director &middot; Edinburgh</div></div></div>
+      </div>
+      <div class="t-card">
+        <div class="t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="t-text">&ldquo;Professional, transparent, and genuinely knowledgeable. They helped me navigate my first bridging loan and the whole process felt completely managed and stress-free.&rdquo;</p>
+        <div class="t-author"><div class="t-avatar">AJ</div><div><div class="t-name">Aisha J.</div><div class="t-role">Solicitor &middot; Leicester</div></div></div>
+      </div>
+      <div class="t-card">
+        <div class="t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="t-text">&ldquo;We&rsquo;d been stuck with one buy-to-let for 5 years. The BRRR blueprint changed everything. Now we have four properties and a clear roadmap to financial freedom.&rdquo;</p>
+        <div class="t-author"><div class="t-avatar">NP</div><div><div class="t-name">Niall P.</div><div class="t-role">Business Owner &middot; Glasgow</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section-grey">
+  <div class="container">
+    <span class="section-eyebrow">Common Questions</span>
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-trigger" onclick="toggleFaq(this)">What exactly is the BRRR strategy?<span class="faq-icon">+</span></button>
+        <div class="faq-body">BRRR stands for Buy, Renovate, Rent, Refinance, Repeat. You purchase a below-market-value property, add value through renovation, tenant it to generate rental income, then refinance to release equity &mdash; allowing you to recycle your original capital into the next deal. Done correctly, it&rsquo;s one of the most powerful wealth-compounding strategies available to UK investors.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-trigger" onclick="toggleFaq(this)">Is the BRRR strategy legal and viable in the UK?<span class="faq-icon">+</span></button>
+        <div class="faq-body">Absolutely. BRRR is a fully legitimate and widely practised UK investment strategy. When structured correctly with the right finance products, legal framework, and professional advice, it&rsquo;s one of the most tax-efficient ways to grow a UK property portfolio. Our blueprint covers all relevant compliance considerations in detail.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-trigger" onclick="toggleFaq(this)">How much capital do I need to start?<span class="faq-icon">+</span></button>
+        <div class="faq-body">We recommend a minimum of &pound;100,000 in available capital for BRRR to be viable in today&rsquo;s UK market. This covers your deposit (typically 20&ndash;25% of purchase price), renovation budget, bridging or refurbishment finance costs, and legal fees. Our blueprint breaks down exact numbers for different deal sizes and regions.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-trigger" onclick="toggleFaq(this)">What types of properties work best for BRRR?<span class="faq-icon">+</span></button>
+        <div class="faq-body">The best BRRR candidates are residential properties in strong rental demand areas available below market value &mdash; typically due to condition, motivated sellers, or off-market sourcing. We focus on 2&ndash;4 bedroom terraced and semi-detached homes across Midlands and Northern England corridors where the price-to-yield ratio remains highly compelling.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-trigger" onclick="toggleFaq(this)">Does Carters Gate manage the whole process for me?<span class="faq-icon">+</span></button>
+        <div class="faq-body">Yes. Our fully managed, hands-free model covers everything: deal sourcing, due diligence, renovation project management, tenant sourcing, lettings compliance, and ongoing property management. You retain full ownership and control while we do the work &mdash; designed specifically for busy professionals who want UK property exposure without the operational headache.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-trigger" onclick="toggleFaq(this)">What returns can I realistically expect?<span class="faq-icon">+</span></button>
+        <div class="faq-body">Results vary by deal, location, and market conditions &mdash; but our clients typically target 6&ndash;9% gross rental yields, 15&ndash;25% forced equity uplift through strategic renovation, and the ability to recycle 70&ndash;90% of their original capital upon refinancing. Our free strategy call is where we model specific numbers for your situation and capital position.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<section class="bottom-cta">
+  <h2>Ready to Build Your <em>Property Portfolio?</em></h2>
+  <p>Download the free BRRR Blueprint and take the first step toward a self-funding UK property portfolio.</p>
+  <button class="scroll-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">DOWNLOAD YOUR FREE BLUEPRINT &rarr;</button>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-logo">
+    <img src="Assets/logo.jpg" alt="Carters Gate Property Investment" style="height:60px;width:auto;border-radius:6px;">
+  </div>
+  <div class="footer-links">
+    <a href="#">Privacy Policy</a>
+    <a href="#">Terms &amp; Conditions</a>
+    <a href="https://cartersgateproperties.co.uk" target="_blank" rel="noopener">Website</a>
+  </div>
+  <p class="footer-copy">
+    &copy; 2025 Carters Gate Property Investment Ltd. All rights reserved.<br>
+    Carters Gate Property Investment Ltd is registered in England &amp; Wales.<br>
+    Phone: +44 07460 021147
+  </p>
+</footer>
+
+<script>
+  const fd = {};
+  function goToStep(n) {
+    document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+    document.getElementById('step' + n).classList.add('active');
+    document.getElementById('progressFill').style.width = ((n / 5) * 100) + '%';
+    for (let i = 1; i <= 4; i++) {
+      const l = document.getElementById('plbl' + i);
+      if (l) l.classList.toggle('active', i === n);
+    }
+    document.querySelector('.form-card').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+  function selectCapital(btn, disqualify) {
+    btn.closest('.options-grid').querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    const dq = document.getElementById('disqualifyMsg');
+    if (disqualify) { dq.style.display = 'block'; }
+    else { dq.style.display = 'none'; setTimeout(() => goToStep(2), 360); }
+  }
+  function quickSelect(btn, next) {
+    btn.closest('.options-grid').querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    setTimeout(() => goToStep(next), 360);
+  }
+  function submitForm() {
+    const fn = document.getElementById('firstNameInput');
+    const ln = document.getElementById('lastNameInput');
+    const em = document.getElementById('emailInput');
+    const ph = document.getElementById('phoneInput');
+    let valid = true;
+    [fn, ln, em, ph].forEach(f => f.classList.remove('error'));
+    if (!fn.value.trim()) { fn.classList.add('error'); fn.focus(); valid = false; }
+    else if (!ln.value.trim()) { ln.classList.add('error'); ln.focus(); valid = false; }
+    else if (!em.value.trim() || !em.value.includes('@')) { em.classList.add('error'); em.focus(); valid = false; }
+    else if (!ph.value.trim()) { ph.classList.add('error'); ph.focus(); valid = false; }
+    if (!valid) return;
+    goToStep(5);
+  }
+  function toggleFaq(btn) {
+    const item = btn.parentElement;
+    const was = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    if (!was) item.classList.add('open');
+  }
+</script>
+</body>
+</html>

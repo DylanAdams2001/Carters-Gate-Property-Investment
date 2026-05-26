@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The BRRR Blueprint — Carters Gate Property Investment</title>
+  <meta name="description" content="The complete Buy, Renovate, Rent, Refinance, Repeat system for building a self-funding UK property portfolio.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gold: #C9A227;
+      --gold-hover: #E0B830;
+      --gold-pale: #FFF9EC;
+      --black: #1A1A1A;
+      --white: #FFFFFF;
+      --light-grey: #F4F4F4;
+      --mid-grey: #555555;
+      --soft-grey: #888888;
+      --dark-navy: #1A1040;
+      --divider: #E8E8E8;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Figtree', sans-serif; color: var(--black); background: var(--white); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    h1, h2, h3, h4, h5 { font-family: 'Montserrat', sans-serif; }
+
+    /* ── COVER PAGE ─────────────────────────────────── */
+    .cover {
+      min-height: 100vh;
+      background: var(--black);
+      background-image:
+        radial-gradient(ellipse at 80% 20%, rgba(201,162,39,0.12) 0%, transparent 50%),
+        radial-gradient(ellipse at 10% 80%, rgba(201,162,39,0.06) 0%, transparent 45%);
+      display: flex; flex-direction: column;
+      padding: 0;
+    }
+    .cover-header {
+      padding: 28px 48px;
+      display: flex; align-items: center; justify-content: space-between;
+      border-bottom: 1px solid rgba(201,162,39,0.15);
+    }
+    .cover-logo img { height: 52px; width: auto; border-radius: 5px; }
+    .cover-badge {
+      display: flex; align-items: center; gap: 8px;
+      background: rgba(201,162,39,0.12); border: 1px solid rgba(201,162,39,0.3);
+      color: var(--gold); font-family: 'Montserrat', sans-serif;
+      font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+      padding: 8px 16px; border-radius: 100px;
+    }
+    .cover-body {
+      flex: 1; display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 60px 48px; text-align: center;
+    }
+    .cover-eyebrow {
+      font-family: 'Montserrat', sans-serif; font-weight: 700;
+      font-size: 11px; letter-spacing: 3px; color: var(--gold);
+      text-transform: uppercase; margin-bottom: 20px;
+    }
+    .cover h1 {
+      font-size: clamp(42px, 7vw, 80px); font-weight: 800; color: var(--white);
+      line-height: 1.05; letter-spacing: -1px; max-width: 900px; margin-bottom: 12px;
+    }
+    .cover h1 em { color: var(--gold); font-style: normal; }
+    .cover-subtitle {
+      font-family: 'Montserrat', sans-serif; font-size: clamp(14px, 2vw, 18px);
+      font-weight: 500; color: rgba(255,255,255,0.5); letter-spacing: 2px;
+      text-transform: uppercase; margin-bottom: 44px;
+    }
+    .cover-divider {
+      width: 60px; height: 3px; background: var(--gold); border-radius: 2px; margin: 0 auto 40px;
+    }
+    .cover-intro {
+      font-size: clamp(16px, 2vw, 19px); color: rgba(255,255,255,0.65);
+      max-width: 640px; line-height: 1.75; margin-bottom: 48px;
+    }
+    .brrr-pills {
+      display: flex; align-items: center; justify-content: center;
+      gap: 10px; flex-wrap: wrap; margin-bottom: 52px;
+    }
+    .brrr-pill {
+      display: flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 100px; padding: 10px 20px;
+      font-family: 'Montserrat', sans-serif; font-weight: 700;
+      font-size: 12px; letter-spacing: 1.5px; color: var(--white); text-transform: uppercase;
+    }
+    .brrr-pill .num {
+      width: 22px; height: 22px; border-radius: 50%; background: var(--gold);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px; color: var(--black); font-weight: 800; flex-shrink: 0;
+    }
+    .cover-cta {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 16px 36px; background: var(--gold); color: var(--black);
+      border-radius: 12px; font-family: 'Montserrat', sans-serif;
+      font-size: 13px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase;
+      text-decoration: none; transition: all 0.25s ease;
+    }
+    .cover-cta:hover { background: var(--gold-hover); transform: translateY(-2px); box-shadow: 0 10px 30px rgba(201,162,39,0.3); }
+    .cover-footer-bar {
+      padding: 20px 48px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+    }
+    .cover-stats { display: flex; align-items: center; gap: 32px; flex-wrap: wrap; }
+    .cstat { display: flex; flex-direction: column; }
+    .cstat-val { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 20px; color: var(--gold); }
+    .cstat-lbl { font-size: 11px; color: rgba(255,255,255,0.35); letter-spacing: 1px; text-transform: uppercase; }
+    .cover-tagline { font-size: 12px; color: rgba(255,255,255,0.25); letter-spacing: 1px; font-style: italic; }
+
+    /* ── CONTENT PAGES ──────────────────────────────── */
+    .page-header {
+      background: var(--black); padding: 16px 48px;
+      display: flex; align-items: center; justify-content: space-between;
+      position: sticky; top: 0; z-index: 50;
+      border-bottom: 1px solid rgba(201,162,39,0.12);
+    }
+    .ph-logo img { height: 40px; width: auto; border-radius: 4px; }
+    .ph-title { font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 2px; color: rgba(255,255,255,0.4); text-transform: uppercase; }
+    .ph-cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 9px 20px; background: var(--gold); color: var(--black);
+      border-radius: 8px; font-family: 'Montserrat', sans-serif;
+      font-size: 11px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase;
+      text-decoration: none; transition: background 0.2s; white-space: nowrap;
+    }
+    .ph-cta:hover { background: var(--gold-hover); }
+
+    /* TABLE OF CONTENTS */
+    .toc-section {
+      background: var(--light-grey);
+      padding: 80px 48px;
+    }
+    .toc-inner { max-width: 800px; margin: 0 auto; }
+    .section-eyebrow { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 10px; letter-spacing: 2.5px; color: var(--gold); text-transform: uppercase; display: block; margin-bottom: 12px; }
+    .toc-title { font-size: clamp(28px, 4vw, 42px); font-weight: 800; color: var(--black); margin-bottom: 10px; line-height: 1.15; letter-spacing: -0.3px; }
+    .toc-sub { font-size: 16px; color: var(--mid-grey); margin-bottom: 44px; line-height: 1.65; }
+    .toc-list { display: flex; flex-direction: column; gap: 0; }
+    .toc-item {
+      display: flex; align-items: center; gap: 20px;
+      padding: 20px 0; border-bottom: 1px solid var(--divider);
+      text-decoration: none; transition: all 0.2s;
+    }
+    .toc-item:first-child { border-top: 1px solid var(--divider); }
+    .toc-item:hover .toc-item-title { color: var(--gold); }
+    .toc-num {
+      width: 44px; height: 44px; border-radius: 12px; background: var(--black);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 15px; color: var(--gold);
+      flex-shrink: 0;
+    }
+    .toc-item-content { flex: 1; }
+    .toc-item-title { font-family: 'Montserrat', sans-serif; font-size: 16px; font-weight: 700; color: var(--black); margin-bottom: 3px; transition: color 0.2s; }
+    .toc-item-sub { font-size: 13px; color: var(--soft-grey); }
+    .toc-arrow { font-size: 18px; color: var(--gold); flex-shrink: 0; }
+
+    /* CHAPTER SECTIONS */
+    .chapter {
+      padding: 100px 48px;
+      border-bottom: 1px solid var(--divider);
+    }
+    .chapter:nth-child(even) { background: var(--light-grey); }
+    .chapter-inner { max-width: 800px; margin: 0 auto; }
+    .chapter-tag {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--black); color: var(--gold);
+      font-family: 'Montserrat', sans-serif; font-weight: 800;
+      font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+      padding: 8px 16px; border-radius: 8px; margin-bottom: 20px;
+    }
+    .chapter h2 {
+      font-size: clamp(28px, 4vw, 44px); font-weight: 800; color: var(--black);
+      line-height: 1.1; letter-spacing: -0.5px; margin-bottom: 10px;
+    }
+    .chapter h2 em { color: var(--gold); font-style: normal; }
+    .chapter-lead {
+      font-size: 18px; color: var(--mid-grey); line-height: 1.75;
+      margin-bottom: 44px; padding-bottom: 44px;
+      border-bottom: 2px solid var(--gold); max-width: 680px;
+    }
+
+    /* KEY INSIGHT BOX */
+    .insight-box {
+      background: var(--black); border-radius: 16px; padding: 32px 36px;
+      margin: 36px 0; border-left: 4px solid var(--gold);
+    }
+    .insight-label {
+      font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 9px;
+      letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 10px;
+    }
+    .insight-box p { font-size: 16px; color: rgba(255,255,255,0.8); line-height: 1.75; }
+    .insight-box strong { color: var(--gold); }
+
+    /* NUMBERED POINTS */
+    .point-list { display: flex; flex-direction: column; gap: 24px; margin: 32px 0; }
+    .point-item { display: flex; gap: 18px; align-items: flex-start; }
+    .point-num {
+      width: 34px; height: 34px; border-radius: 50%; background: var(--gold);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 13px;
+      color: var(--black); flex-shrink: 0; margin-top: 2px;
+    }
+    .point-item h4 { font-size: 16px; font-weight: 700; color: var(--black); margin-bottom: 5px; }
+    .point-item p { font-size: 15px; color: var(--mid-grey); line-height: 1.7; }
+
+    /* STAT CARDS */
+    .stat-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 36px 0; }
+    .stat-card {
+      background: var(--white); border-radius: 14px; padding: 24px 20px;
+      text-align: center; border: 1px solid var(--divider);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    .chapter:nth-child(even) .stat-card { background: var(--white); }
+    .stat-val { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 32px; color: var(--gold); line-height: 1; margin-bottom: 6px; }
+    .stat-lbl { font-size: 13px; color: var(--mid-grey); line-height: 1.4; }
+
+    /* CHECKLIST */
+    .checklist { display: flex; flex-direction: column; gap: 14px; margin: 28px 0; }
+    .check-item { display: flex; align-items: flex-start; gap: 12px; }
+    .check-icon {
+      width: 22px; height: 22px; border-radius: 50%; background: rgba(201,162,39,0.15);
+      border: 1.5px solid var(--gold); display: flex; align-items: center; justify-content: center;
+      font-size: 11px; color: var(--gold); flex-shrink: 0; margin-top: 2px; font-weight: 700;
+    }
+    .check-item p { font-size: 15px; color: var(--black); line-height: 1.6; }
+    .check-item p strong { color: var(--black); }
+
+    /* WARNING BOX */
+    .warning-box {
+      background: var(--gold-pale); border: 1.5px solid rgba(201,162,39,0.4);
+      border-radius: 12px; padding: 24px 28px; margin: 28px 0;
+      display: flex; gap: 16px; align-items: flex-start;
+    }
+    .warning-icon { font-size: 22px; flex-shrink: 0; margin-top: 1px; }
+    .warning-box h4 { font-size: 15px; font-weight: 700; color: var(--black); margin-bottom: 5px; }
+    .warning-box p { font-size: 14px; color: #7A5C00; line-height: 1.65; }
+
+    /* TWO COLUMN LAYOUT */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 32px 0; }
+    .col-card {
+      background: var(--white); border-radius: 14px; padding: 26px;
+      border-top: 3px solid var(--gold); box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    .chapter:nth-child(even) .col-card { background: var(--white); }
+    .col-card h4 { font-size: 15px; font-weight: 700; color: var(--black); margin-bottom: 12px; }
+    .col-card ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .col-card ul li { display: flex; align-items: flex-start; gap: 8px; font-size: 14px; color: var(--mid-grey); line-height: 1.55; }
+    .col-card ul li::before { content: '→'; color: var(--gold); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+
+    /* BODY TEXT */
+    .body-text { font-size: 16px; color: var(--mid-grey); line-height: 1.85; margin-bottom: 20px; }
+    .body-text strong { color: var(--black); font-weight: 700; }
+
+    /* FORMULA BLOCK */
+    .formula {
+      background: var(--black); border-radius: 16px; padding: 28px 36px; margin: 32px 0;
+      text-align: center;
+    }
+    .formula-label { font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 2px; color: rgba(255,255,255,0.4); text-transform: uppercase; margin-bottom: 12px; }
+    .formula-eq { font-family: 'Montserrat', sans-serif; font-size: clamp(18px, 3vw, 26px); font-weight: 800; color: var(--white); line-height: 1.4; }
+    .formula-eq em { color: var(--gold); font-style: normal; }
+    .formula-eq .op { color: rgba(255,255,255,0.3); margin: 0 8px; }
+
+    /* EXAMPLE DEAL */
+    .deal-box {
+      background: var(--white); border-radius: 16px; padding: 32px 36px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.07); margin: 32px 0;
+      border: 1px solid var(--divider);
+    }
+    .chapter:nth-child(even) .deal-box { background: var(--white); }
+    .deal-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; flex-wrap: wrap; gap: 12px; }
+    .deal-title { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 18px; color: var(--black); }
+    .deal-badge { background: var(--gold); color: var(--black); font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 6px 14px; border-radius: 100px; }
+    .deal-rows { display: flex; flex-direction: column; gap: 10px; }
+    .deal-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--divider); }
+    .deal-row:last-child { border-bottom: none; }
+    .deal-row.total { border-top: 2px solid var(--gold); padding-top: 14px; margin-top: 4px; }
+    .dr-label { font-size: 14px; color: var(--mid-grey); }
+    .dr-val { font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 700; color: var(--black); }
+    .dr-val.positive { color: #2ECC71; }
+    .dr-val.gold { color: var(--gold); }
+    .deal-row.total .dr-label { font-weight: 700; color: var(--black); font-size: 15px; }
+    .deal-row.total .dr-val { font-size: 18px; color: var(--gold); }
+
+    /* CHAPTER END CTA */
+    .chapter-cta {
+      margin-top: 52px; padding-top: 40px; border-top: 1px solid var(--divider);
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px;
+    }
+    .chapter-cta p { font-size: 15px; color: var(--mid-grey); max-width: 420px; line-height: 1.6; }
+    .chapter-cta a {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 13px 28px; background: var(--black); color: var(--gold);
+      border-radius: 10px; font-family: 'Montserrat', sans-serif;
+      font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+      text-decoration: none; transition: all 0.2s; white-space: nowrap;
+    }
+    .chapter-cta a:hover { background: var(--gold); color: var(--black); }
+
+    /* FINAL CTA SECTION */
+    .final-cta {
+      background: var(--black);
+      background-image: radial-gradient(ellipse at 60% 0%, rgba(201,162,39,0.12) 0%, transparent 55%);
+      padding: 100px 48px; text-align: center;
+    }
+    .final-cta h2 { font-size: clamp(30px, 5vw, 52px); font-weight: 800; color: var(--white); margin-bottom: 16px; letter-spacing: -0.5px; line-height: 1.1; }
+    .final-cta h2 em { color: var(--gold); font-style: normal; }
+    .final-cta p { font-size: 18px; color: rgba(255,255,255,0.55); max-width: 560px; margin: 0 auto 44px; line-height: 1.7; }
+    .final-cta-btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 20px 48px; background: var(--gold); color: var(--black);
+      border-radius: 14px; font-family: 'Montserrat', sans-serif;
+      font-size: 15px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase;
+      text-decoration: none; transition: all 0.25s ease; margin-bottom: 20px; display: inline-flex;
+    }
+    .final-cta-btn:hover { background: var(--gold-hover); transform: translateY(-2px); box-shadow: 0 14px 40px rgba(201,162,39,0.35); }
+    .final-no-pressure { font-size: 13px; color: rgba(255,255,255,0.3); margin-top: 14px; }
+    .final-details {
+      display: flex; align-items: center; justify-content: center; gap: 28px;
+      flex-wrap: wrap; margin-top: 48px; padding-top: 40px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .fd-item { display: flex; align-items: center; gap: 8px; font-size: 14px; color: rgba(255,255,255,0.5); }
+    .fd-item span { color: var(--gold); font-weight: 700; }
+
+    /* FOOTER */
+    .doc-footer { background: var(--dark-navy); padding: 44px 48px; text-align: center; }
+    .footer-logo-wrap { display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+    .footer-logo-wrap img { height: 52px; width: auto; border-radius: 5px; }
+    .footer-links { display: flex; align-items: center; justify-content: center; gap: 28px; flex-wrap: wrap; margin-bottom: 18px; }
+    .footer-links a { font-size: 13px; color: rgba(255,255,255,0.38); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-copy { font-size: 12px; color: rgba(255,255,255,0.2); line-height: 1.9; }
+
+    /* RESPONSIVE */
+    @media (max-width: 760px) {
+      .cover-header, .cover-body, .cover-footer-bar { padding-left: 24px; padding-right: 24px; }
+      .cover-footer-bar { flex-direction: column; align-items: flex-start; }
+      .page-header { padding: 14px 20px; }
+      .ph-title { display: none; }
+      .toc-section, .chapter { padding: 60px 24px; }
+      .final-cta { padding: 72px 24px; }
+      .doc-footer { padding: 40px 24px; }
+      .stat-cards { grid-template-columns: 1fr 1fr; }
+      .two-col { grid-template-columns: 1fr; }
+      .brrr-pills { gap: 8px; }
+      .chapter-cta { flex-direction: column; }
+    }
+    @media (max-width: 460px) {
+      .stat-cards { grid-template-columns: 1fr; }
+    }
+
+    /* PRINT */
+    @media print {
+      .page-header { position: static; }
+      .cover { min-height: auto; page-break-after: always; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════
+     COVER PAGE
+══════════════════════════════════════════════════ -->
+<section class="cover" id="cover">
+  <div class="cover-header">
+    <div class="cover-logo">
+      <img src="Assets/logo.jpg" alt="Carters Gate Property Investment">
+    </div>
+    <div class="cover-badge">&#127381; Free Download &mdash; Exclusive Guide</div>
+  </div>
+
+  <div class="cover-body">
+    <div class="cover-eyebrow">Carters Gate Property Investment Presents</div>
+    <h1>The <em>BRRR</em><br>Blueprint</h1>
+    <div class="cover-subtitle">Buy &middot; Renovate &middot; Rent &middot; Refinance &middot; Repeat</div>
+    <div class="cover-divider"></div>
+    <p class="cover-intro">
+      The complete, step-by-step system our clients use to build self-funding UK property portfolios &mdash; recycling the same capital deal after deal to compound wealth, generate monthly cash flow, and achieve financial independence.
+    </p>
+
+    <div class="brrr-pills">
+      <div class="brrr-pill"><span class="num">1</span> Buy</div>
+      <div class="brrr-pill"><span class="num">2</span> Renovate</div>
+      <div class="brrr-pill"><span class="num">3</span> Rent</div>
+      <div class="brrr-pill"><span class="num">4</span> Refinance</div>
+      <div class="brrr-pill"><span class="num">5</span> Repeat</div>
+    </div>
+
+    <a href="#toc" class="cover-cta">Read the Blueprint &darr;</a>
+  </div>
+
+  <div class="cover-footer-bar">
+    <div class="cover-stats">
+      <div class="cstat"><span class="cstat-val">40+</span><span class="cstat-lbl">Properties Delivered</span></div>
+      <div class="cstat"><span class="cstat-val">&pound;3M+</span><span class="cstat-lbl">Portfolio Value Built</span></div>
+      <div class="cstat"><span class="cstat-val">5.0&#9733;</span><span class="cstat-lbl">Google Rating</span></div>
+      <div class="cstat"><span class="cstat-val">100%</span><span class="cstat-lbl">Hands-Free Service</span></div>
+    </div>
+    <div class="cover-tagline">&ldquo;Our Expertise, Your Peace of Mind&rdquo;</div>
+  </div>
+</section>
+
+<!-- ── STICKY HEADER (shows after cover) ── -->
+<header class="page-header" id="pageHeader">
+  <div class="ph-logo">
+    <img src="Assets/logo.jpg" alt="Carters Gate Property Investment">
+  </div>
+  <div class="ph-title">The BRRR Blueprint &mdash; Carters Gate Property Investment</div>
+  <a href="booking/" class="ph-cta">Book Free Call &rarr;</a>
+</header>
+
+<!-- ══════════════════════════════════════════════════
+     TABLE OF CONTENTS
+══════════════════════════════════════════════════ -->
+<section class="toc-section" id="toc">
+  <div class="toc-inner">
+    <span class="section-eyebrow">Contents</span>
+    <h2 class="toc-title">What This Blueprint Covers</h2>
+    <p class="toc-sub">Five chapters covering the complete BRRR system &mdash; from sourcing your first deal to scaling a self-funding portfolio without tying up capital.</p>
+
+    <div class="toc-list">
+      <a href="#chapter1" class="toc-item">
+        <div class="toc-num">01</div>
+        <div class="toc-item-content">
+          <div class="toc-item-title">Deal Sourcing &mdash; Finding Below-Market-Value Properties</div>
+          <div class="toc-item-sub">How to identify undervalued properties before they hit the open market</div>
+        </div>
+        <div class="toc-arrow">&rarr;</div>
+      </a>
+      <a href="#chapter2" class="toc-item">
+        <div class="toc-num">02</div>
+        <div class="toc-item-content">
+          <div class="toc-item-title">Renovation Strategy &mdash; Forcing Equity Efficiently</div>
+          <div class="toc-item-sub">The upgrades that add the most value per pound and how to stay on budget</div>
+        </div>
+        <div class="toc-arrow">&rarr;</div>
+      </a>
+      <a href="#chapter3" class="toc-item">
+        <div class="toc-num">03</div>
+        <div class="toc-item-content">
+          <div class="toc-item-title">Rental Optimisation &mdash; Maximising Monthly Yield</div>
+          <div class="toc-item-sub">Structuring tenancies to achieve 6&ndash;9% gross yields in today&rsquo;s UK market</div>
+        </div>
+        <div class="toc-arrow">&rarr;</div>
+      </a>
+      <a href="#chapter4" class="toc-item">
+        <div class="toc-num">04</div>
+        <div class="toc-item-content">
+          <div class="toc-item-title">Refinancing Blueprint &mdash; Recycling Your Capital</div>
+          <div class="toc-item-sub">Pulling equity tax-efficiently and preparing for your next deal</div>
+        </div>
+        <div class="toc-arrow">&rarr;</div>
+      </a>
+      <a href="#chapter5" class="toc-item">
+        <div class="toc-num">05</div>
+        <div class="toc-item-content">
+          <div class="toc-item-title">The Repeat System &mdash; Scaling Without Tying Up Capital</div>
+          <div class="toc-item-sub">How to compound your portfolio deal by deal using the same original capital</div>
+        </div>
+        <div class="toc-arrow">&rarr;</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     CHAPTER 1 — DEAL SOURCING
+══════════════════════════════════════════════════ -->
+<section class="chapter" id="chapter1">
+  <div class="chapter-inner">
+    <div class="chapter-tag">Chapter 01</div>
+    <h2>Deal Sourcing &mdash; Finding <em>Below-Market-Value</em> Properties</h2>
+    <p class="chapter-lead">The BRRR strategy lives and dies at the acquisition stage. Buying at or above market value leaves no room for the refinance to work. The goal is to buy a property at a genuine discount &mdash; typically 15&ndash;25% below open market value &mdash; so the renovation uplift and refinance can return the majority of your capital.</p>
+
+    <p class="body-text">Most investors competing on Rightmove and Zoopla will never find a true BRRR deal. By the time a property is listed publicly, hundreds of buyers have already seen it and the price reflects full market demand. The advantage lies in <strong>off-market sourcing</strong> &mdash; identifying and approaching properties before they become publicly available.</p>
+
+    <div class="stat-cards">
+      <div class="stat-card">
+        <div class="stat-val">15&ndash;25%</div>
+        <div class="stat-lbl">Target below-market-value discount</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">72%</div>
+        <div class="stat-lbl">Of our deals are sourced off-market</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">6&ndash;8 wks</div>
+        <div class="stat-lbl">Average time from offer to exchange</div>
+      </div>
+    </div>
+
+    <p class="body-text">The most productive sourcing strategies in today&rsquo;s UK market are motivated seller campaigns, probate referrals, and relationships with local estate agents who bring pre-market opportunities. It takes consistency and volume &mdash; most experienced sourcers evaluate 40&ndash;80 leads to secure one viable BRRR deal.</p>
+
+    <div class="point-list">
+      <div class="point-item">
+        <div class="point-num">1</div>
+        <div>
+          <h4>Motivated Seller Identification</h4>
+          <p>Landlords exiting the market due to tax changes (Section 24), probate properties, divorce disposals, and chain-break situations are the most reliable sources of genuine discounts. These sellers prioritise speed and certainty over maximum price.</p>
+        </div>
+      </div>
+      <div class="point-item">
+        <div class="point-num">2</div>
+        <div>
+          <h4>Area &amp; Corridor Selection</h4>
+          <p>Target areas with strong rental demand, a growing employment base, and active property price growth &mdash; but where purchase prices remain below the national average. The Midlands and North of England consistently deliver the most compelling BRRR fundamentals: low acquisition cost, high rental yield, and meaningful price growth.</p>
+        </div>
+      </div>
+      <div class="point-item">
+        <div class="point-num">3</div>
+        <div>
+          <h4>Property Type &amp; Size</h4>
+          <p>2&ndash;4 bedroom terraced and semi-detached houses represent the sweet spot. They attract the broadest rental demand, command the best yields relative to price, and are the easiest to finance with standard buy-to-let mortgage products after refinancing.</p>
+        </div>
+      </div>
+      <div class="point-item">
+        <div class="point-num">4</div>
+        <div>
+          <h4>Deal Assessment &mdash; Running the Numbers</h4>
+          <p>Before making any offer, model the full deal: purchase price, estimated renovation cost, projected end value (GDV), achievable rental income, and likely refinance amount. If the numbers don&rsquo;t return at least 75% of your invested capital at refinance, keep searching.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="insight-box">
+      <div class="insight-label">Key Insight</div>
+      <p>A good deal is made at the <strong>point of purchase</strong>. The renovation adds value, but if you overpay for the property, no amount of renovation will rescue the refinance. Always buy with enough margin to absorb unexpected renovation costs and still recycle your capital.</p>
+    </div>
+
+    <div class="chapter-cta">
+      <p>Want us to source and assess BRRR deals on your behalf? Book a free strategy call to find out how our done-for-you model works.</p>
+      <a href="booking/">Book a Free Strategy Call &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     CHAPTER 2 — RENOVATION STRATEGY
+══════════════════════════════════════════════════ -->
+<section class="chapter" id="chapter2">
+  <div class="chapter-inner">
+    <div class="chapter-tag">Chapter 02</div>
+    <h2>Renovation Strategy &mdash; <em>Forcing Equity</em> Efficiently</h2>
+    <p class="chapter-lead">Renovation is the engine of the BRRR model. A well-executed refurbishment transforms a below-market-value acquisition into a finished, mortgageable property worth significantly more than the combined purchase and renovation cost. The goal is not a perfect renovation &mdash; it&rsquo;s a <em>profitable</em> renovation.</p>
+
+    <p class="body-text">The difference between a successful BRRR refurbishment and an expensive mistake comes down to two things: <strong>scope control</strong> and <strong>value-add focus</strong>. Every pound you spend must either increase the property&rsquo;s end value by more than a pound, or be unavoidable for the property to be mortgageable and lettable.</p>
+
+    <div class="two-col">
+      <div class="col-card">
+        <h4>&#9989; High ROI Upgrades</h4>
+        <ul>
+          <li>Full kitchen replacement (modern, neutral finish)</li>
+          <li>Bathroom refurbishment (new suite, tiling, fixtures)</li>
+          <li>New flooring throughout (LVT/laminate is robust and cost-effective)</li>
+          <li>Full redecoration in neutral, lettable palette</li>
+          <li>New boiler or full heating system upgrade</li>
+          <li>Rewire and consumer unit replacement (if required)</li>
+          <li>Loft conversion or extension (where viable)</li>
+        </ul>
+      </div>
+      <div class="col-card">
+        <h4>&#10060; Low ROI &mdash; Avoid Over-Spending</h4>
+        <ul>
+          <li>Premium fixtures and finishes (standard quality is fine for rental)</li>
+          <li>Landscaping and garden works beyond the basics</li>
+          <li>Conservatories (rarely add GDV in line with cost)</li>
+          <li>Over-specified kitchens beyond market expectation</li>
+          <li>Structural works beyond what&rsquo;s strictly necessary</li>
+          <li>Cosmetic upgrades that add no measurable GDV</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="stat-cards">
+      <div class="stat-card">
+        <div class="stat-val">15&ndash;25%</div>
+        <div class="stat-lbl">Typical GDV uplift from well-executed refurbishment</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">8&ndash;16 wks</div>
+        <div class="stat-lbl">Typical refurbishment duration</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">1.5&times;&ndash;2&times;</div>
+        <div class="stat-lbl">Target return on every renovation pound spent (GDV uplift)</div>
+      </div>
+    </div>
+
+    <p class="body-text">Budget management is critical. Start with a detailed scope of works and fixed-price quotes from trusted contractors. Build in a <strong>10&ndash;15% contingency</strong> for every project &mdash; unexpected structural issues, materials delays, and scope creep are inevitable. A project that runs 25% over budget can turn a profitable BRRR into a deal that leaves capital trapped in the property.</p>
+
+    <div class="insight-box">
+      <div class="insight-label">The Golden Rule of BRRR Renovation</div>
+      <p>You&rsquo;re renovating for a <strong>surveyor and a tenant</strong>, not for yourself. Every decision should be filtered through: &ldquo;Will this increase the surveyed value? Will this attract a quality tenant?&rdquo; If the answer to both is no, don&rsquo;t spend the money.</p>
+    </div>
+
+    <div class="warning-box">
+      <div class="warning-icon">&#9888;&#65039;</div>
+      <div>
+        <h4>Watch Out for Scope Creep</h4>
+        <p>The most common reason BRRR deals underperform is renovation budgets running significantly over plan. Once you&rsquo;re on site and contractors start finding hidden issues, the temptation to &ldquo;do it properly&rdquo; can rapidly escalate costs. Stick to your scope unless a structural or legal issue demands otherwise.</p>
+      </div>
+    </div>
+
+    <div class="chapter-cta">
+      <p>Our done-for-you service includes full renovation project management &mdash; fixed-price contracts, trusted contractor network, and weekly progress reporting.</p>
+      <a href="booking/">How Our Service Works &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     CHAPTER 3 — RENTAL OPTIMISATION
+══════════════════════════════════════════════════ -->
+<section class="chapter" id="chapter3">
+  <div class="chapter-inner">
+    <div class="chapter-tag">Chapter 03</div>
+    <h2>Rental Optimisation &mdash; <em>Maximising</em> Monthly Yield</h2>
+    <p class="chapter-lead">Once the renovation is complete, the property needs to be tenanted quickly, at the right rent, with the right tenant. The rental income serves two purposes in the BRRR model: it services your buy-to-let mortgage after refinancing, and it generates the monthly cash flow that makes property investment worthwhile long-term.</p>
+
+    <p class="body-text">Rental yield is calculated as annual rental income divided by the property&rsquo;s purchase price (or current value). In the BRRR model, you&rsquo;re targeting a <strong>gross yield of 6&ndash;9%</strong> relative to the refinanced value. Anything below 5% in a BRRR context makes the numbers very tight once mortgage payments, void periods, and management fees are accounted for.</p>
+
+    <div class="stat-cards">
+      <div class="stat-card">
+        <div class="stat-val">6&ndash;9%</div>
+        <div class="stat-lbl">Target gross rental yield on refinanced value</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">&lt;14 days</div>
+        <div class="stat-lbl">Our average void period to first tenant</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">3.5&ndash;4&times;</div>
+        <div class="stat-lbl">Minimum rental coverage ratio required by most BTL lenders</div>
+      </div>
+    </div>
+
+    <div class="point-list">
+      <div class="point-item">
+        <div class="point-num">1</div>
+        <div>
+          <h4>Presentation &amp; Photography</h4>
+          <p>Professional photography and a staged, well-presented property consistently achieve higher rents and attract better-quality applicants. The rental market is competitive &mdash; first impressions matter. Spend &pound;200&ndash;300 on photography and it will pay back multiple times in reduced void periods and higher achieved rent.</p>
+        </div>
+      </div>
+      <div class="point-item">
+        <div class="point-num">2</div>
+        <div>
+          <h4>Tenant Selection &amp; Referencing</h4>
+          <p>Rigorous tenant referencing &mdash; employment checks, previous landlord references, and credit history &mdash; is the most important thing you can do to protect your investment. One bad tenant can cost thousands in arrears, damage, and legal fees. Never cut corners on referencing.</p>
+        </div>
+      </div>
+      <div class="point-item">
+        <div class="point-num">3</div>
+        <div>
+          <h4>Tenancy Structuring</h4>
+          <p>A well-drafted Assured Shorthold Tenancy (AST), an ARLA-compliant inventory, and correct deposit registration (with a TDS-approved scheme) protect your investment and ensure you&rsquo;re fully compliant with the Housing Act. Non-compliance creates serious legal and financial exposure.</p>
+        </div>
+      </div>
+      <div class="point-item">
+        <div class="point-num">4</div>
+        <div>
+          <h4>Compliance Obligations</h4>
+          <p>UK landlord compliance is extensive and evolving. At minimum, ensure: valid Gas Safety Certificate (annual), EICR (every 5 years), EPC rating of E or above (D+ recommended given incoming legislation), smoke and carbon monoxide alarms, Right to Rent checks, and correct deposit protection within 30 days of receipt.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="insight-box">
+      <div class="insight-label">The Lender Coverage Test</div>
+      <p>Most buy-to-let lenders will only offer a mortgage if the monthly rental income covers <strong>125&ndash;145% of the monthly interest payment</strong> at a stress-tested rate (typically 5.5&ndash;6%). Before proceeding, model your rental income against projected mortgage payments to confirm the lender&rsquo;s coverage ratio is met &mdash; otherwise you may not be able to refinance as planned.</p>
+    </div>
+
+    <div class="chapter-cta">
+      <p>Our fully managed lettings service handles marketing, tenant selection, compliance, and ongoing management &mdash; so you receive the rent without the work.</p>
+      <a href="booking/">Ask About Our Managed Service &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     CHAPTER 4 — REFINANCING
+══════════════════════════════════════════════════ -->
+<section class="chapter" id="chapter4">
+  <div class="chapter-inner">
+    <div class="chapter-tag">Chapter 04</div>
+    <h2>Refinancing Blueprint &mdash; <em>Recycling</em> Your Capital</h2>
+    <p class="chapter-lead">The refinance is where the BRRR strategy becomes truly powerful. Once the property is renovated and tenanted, you refinance onto a standard buy-to-let mortgage based on the new, higher value. If the numbers have been executed correctly, the refinanced loan amount returns the majority &mdash; or even all &mdash; of your original invested capital, ready to deploy into the next deal.</p>
+
+    <div class="formula">
+      <div class="formula-label">The BRRR Refinance Formula</div>
+      <div class="formula-eq">
+        <em>GDV (End Value)</em>
+        <span class="op">&times;</span>
+        <em>75% LTV</em>
+        <span class="op">&minus;</span>
+        <em>Bridging Loan Balance</em>
+        <span class="op">=</span>
+        <em>Capital Released</em>
+      </div>
+    </div>
+
+    <p class="body-text">The typical BRRR refinance uses a <strong>75% Loan-to-Value (LTV) buy-to-let mortgage</strong>. If the post-renovation value (GDV) is sufficiently above the total cost of acquisition and refurbishment, the refinanced mortgage will return 70&ndash;90% of your original capital &mdash; sometimes 100% or more on exceptional deals.</p>
+
+    <div class="deal-box">
+      <div class="deal-header">
+        <div class="deal-title">Example Deal &mdash; 3-Bed Terrace, East Midlands</div>
+        <div class="deal-badge">Illustrative</div>
+      </div>
+      <div class="deal-rows">
+        <div class="deal-row"><span class="dr-label">Purchase price (below market)</span><span class="dr-val">&pound;110,000</span></div>
+        <div class="deal-row"><span class="dr-label">Renovation &amp; holding costs</span><span class="dr-val">&pound;28,000</span></div>
+        <div class="deal-row"><span class="dr-label">Legal, survey, finance fees</span><span class="dr-val">&pound;6,500</span></div>
+        <div class="deal-row total"><span class="dr-label">Total money invested</span><span class="dr-val gold">&pound;144,500</span></div>
+        <div class="deal-row"><span class="dr-label">Post-renovation end value (GDV)</span><span class="dr-val positive">&pound;185,000</span></div>
+        <div class="deal-row"><span class="dr-label">BTL mortgage at 75% LTV</span><span class="dr-val">&pound;138,750</span></div>
+        <div class="deal-row total"><span class="dr-label">Capital returned (vs &pound;144,500 in)</span><span class="dr-val gold">&pound;138,750 (96%)</span></div>
+        <div class="deal-row"><span class="dr-label">Monthly rental income</span><span class="dr-val positive">&pound;900 pcm</span></div>
+        <div class="deal-row"><span class="dr-label">Monthly BTL mortgage (est.)</span><span class="dr-val">&pound;530 pcm</span></div>
+        <div class="deal-row total"><span class="dr-label">Monthly cash flow (before mgmt)</span><span class="dr-val positive">&pound;370 pcm</span></div>
+      </div>
+    </div>
+
+    <div class="point-list">
+      <div class="point-item">
+        <div class="point-num">1</div>
+        <div>
+          <h4>Bridging Finance vs. Cash Purchase</h4>
+          <p>Most BRRR investors use short-term bridging finance to fund the acquisition and renovation, then exit onto a standard BTL mortgage at refinance. Bridging rates are higher (0.75&ndash;1.25%/month) but allow you to acquire and refurbish quickly without tying up large amounts of capital in a single deal while waiting for the refinance.</p>
+        </div>
+      </div>
+      <div class="point-item">
+        <div class="point-num">2</div>
+        <div>
+          <h4>The 6-Month Rule</h4>
+          <p>Most high-street and specialist BTL lenders apply a &ldquo;6-month ownership rule&rdquo; &mdash; they won&rsquo;t lend against the new value until you&rsquo;ve owned the property for at least 6 months. Plan your BRRR timeline accordingly, using bridging finance to cover the acquisition and renovation period, and timing the refinance application after the 6-month mark.</p>
+        </div>
+      </div>
+      <div class="point-item">
+        <div class="point-num">3</div>
+        <div>
+          <h4>Surveyor Selection &amp; RICS Valuation</h4>
+          <p>The refinanced mortgage will be based on a RICS surveyor&rsquo;s valuation, not the asking price or your own estimate. Before completing the renovation, understand comparable sales (comps) in the area and ensure your renovation brings the property to the standard those comps reflect. A well-presented, compliant property consistently achieves better surveyor valuations.</p>
+        </div>
+      </div>
+      <div class="point-item">
+        <div class="point-num">4</div>
+        <div>
+          <h4>Tax &amp; Ownership Structure</h4>
+          <p>The ownership structure (personal name vs. limited company SPV) has significant implications for mortgage availability, tax treatment, and long-term portfolio scalability. Many active investors now acquire through a limited company SPV. Speak to a specialist property accountant and tax adviser before structuring your first deal &mdash; the decision is hard to reverse.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="insight-box">
+      <div class="insight-label">The Goal: Infinite Return</div>
+      <p>When a BRRR deal returns 100% of your invested capital at refinance while leaving a tenanted, cash-flowing asset behind, the deal has delivered an <strong>infinite return on capital</strong> &mdash; you have an income-producing property and all your money back. This is the power of the BRRR model done correctly.</p>
+    </div>
+
+    <div class="chapter-cta">
+      <p>Our advisors will model your exact refinance numbers on a free 30-minute strategy call &mdash; specific to your capital, deal size, and target area.</p>
+      <a href="booking/">Model My Refinance Numbers &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     CHAPTER 5 — THE REPEAT SYSTEM
+══════════════════════════════════════════════════ -->
+<section class="chapter" id="chapter5">
+  <div class="chapter-inner">
+    <div class="chapter-tag">Chapter 05</div>
+    <h2>The Repeat System &mdash; <em>Scaling</em> Your Portfolio</h2>
+    <p class="chapter-lead">The final and most powerful stage of BRRR is the one most investors never reach: the systematic, repeatable deployment of recycled capital into deal after deal. When the process is working, each deal returns most of your capital, which you immediately redeploy. Your portfolio grows. Your cash flow compounds. Your wealth builds &mdash; using broadly the same initial capital you started with.</p>
+
+    <p class="body-text">The investors who build genuinely transformational property portfolios are not the ones who found the best single deal. They&rsquo;re the ones who built a <strong>system</strong>: a repeatable process for sourcing, executing, and refinancing deals &mdash; and then doing it again, and again, and again.</p>
+
+    <div class="stat-cards">
+      <div class="stat-card">
+        <div class="stat-val">3&ndash;4</div>
+        <div class="stat-lbl">Properties some clients acquire in their first 24 months</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">70&ndash;90%</div>
+        <div class="stat-lbl">Capital typically recycled per deal on a well-executed BRRR</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">&pound;1,500+</div>
+        <div class="stat-lbl">Monthly net cash flow achievable from a 3-property BRRR portfolio</div>
+      </div>
+    </div>
+
+    <div class="point-list">
+      <div class="point-item">
+        <div class="point-num">1</div>
+        <div>
+          <h4>Build the Machine, Not Just the Deal</h4>
+          <p>The first BRRR deal teaches you the process. The second proves it works. By the third, you have a system. Document everything: your deal criteria, your contractor relationships, your finance contacts, your letting agent processes. Systems scale; one-off decisions don&rsquo;t.</p>
+        </div>
+      </div>
+      <div class="point-item">
+        <div class="point-num">2</div>
+        <div>
+          <h4>Compound Your Knowledge, Not Just Your Capital</h4>
+          <p>Each deal makes you faster, smarter, and more selective. Your ability to assess deals improves, your contractor relationships deepen, and your finance broker understands your profile. The compounding of knowledge is as valuable as the compounding of capital in property investing.</p>
+        </div>
+      </div>
+      <div class="point-item">
+        <div class="point-num">3</div>
+        <div>
+          <h4>The Role of Professional Management</h4>
+          <p>As your portfolio grows, the time cost of self-management becomes the biggest constraint on your ability to scale. A fully managed, hands-free model &mdash; like the one Carters Gate provides &mdash; allows you to focus on deal evaluation and capital deployment while the operational side runs without your daily involvement.</p>
+        </div>
+      </div>
+      <div class="point-item">
+        <div class="point-num">4</div>
+        <div>
+          <h4>When to Stop BRRR and Hold</h4>
+          <p>At some point, the right move is to stop recycling capital and allow properties to accumulate long-term equity and cash flow. This is a personal decision based on your portfolio size, income replacement goals, and risk appetite. Most of our clients run BRRR aggressively for 3&ndash;7 years, then shift to a hold-and-manage strategy once their income goal is met.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="insight-box">
+      <div class="insight-label">The Long Game</div>
+      <p>A disciplined BRRR investor with &pound;120,000 in starting capital who executes 2 deals per year &mdash; recycling 80% of capital each time &mdash; can realistically build a <strong>portfolio of 8&ndash;10 properties within 5 years</strong>, generating &pound;3,000&ndash;&pound;5,000 per month in net rental income, with the same original capital base they started with.</p>
+    </div>
+
+    <div class="chapter-cta">
+      <p>Ready to start building your BRRR portfolio? Book your free strategy call and we&rsquo;ll map out a personalised deal pipeline based on your capital and goals.</p>
+      <a href="booking/">Build My Portfolio Plan &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     FINAL CTA
+══════════════════════════════════════════════════ -->
+<section class="final-cta">
+  <h2>Your Next Step:<br><em>The Free Strategy Call</em></h2>
+  <p>You now have the complete BRRR framework. The next step is turning it into a plan specific to your capital, your goals, and your timeline &mdash; with expert guidance from a senior Carters Gate advisor.</p>
+
+  <a href="booking/" class="final-cta-btn">Book Your Free 30-Minute Strategy Call &rarr;</a>
+  <p class="final-no-pressure">No pitch. No pressure. No commitment.</p>
+
+  <div class="final-details">
+    <div class="fd-item">&#128222; <span>Phone or video</span> &mdash; your preference</div>
+    <div class="fd-item">&#9200; <span>30 minutes</span> &mdash; focused &amp; practical</div>
+    <div class="fd-item">&#128176; <span>Completely free</span> &mdash; no strings attached</div>
+    <div class="fd-item">&#128100; <span>Senior advisor</span> &mdash; not a sales rep</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="doc-footer">
+  <div class="footer-logo-wrap">
+    <img src="Assets/logo.jpg" alt="Carters Gate Property Investment">
+  </div>
+  <div class="footer-links">
+    <a href="#">Privacy Policy</a>
+    <a href="#">Terms &amp; Conditions</a>
+    <a href="https://cartersgateproperties.co.uk" target="_blank" rel="noopener">cartersgateproperties.co.uk</a>
+    <a href="tel:+4407460021147">+44 07460 021147</a>
+  </div>
+  <p class="footer-copy">
+    &copy; 2025 Carters Gate Property Investment Ltd. All rights reserved.<br>
+    Carters Gate Property Investment Ltd is registered in England &amp; Wales.<br>
+    This guide is for educational purposes only and does not constitute financial or investment advice.<br>
+    Always seek independent financial and legal advice before making any investment decisions.
+  </p>
+</footer>
+
+</body>
+</html>
