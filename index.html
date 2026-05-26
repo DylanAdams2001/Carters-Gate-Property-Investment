@@ -492,6 +492,12 @@
 
 <script>
   const fd = {};
+
+  function getCookie(name) {
+    const match = document.cookie.match(new RegExp('(?:^|; )' + name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '=([^;]*)'));
+    return match ? decodeURIComponent(match[1]) : '';
+  }
+
   function goToStep(n) {
     document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
     document.getElementById('step' + n).classList.add('active');
@@ -538,7 +544,10 @@
       capital:    fd.capital  || '',
       timeline:   fd.timeline || '',
       goal:       fd.goal     || '',
-      source:     'BRRR Blueprint Funnel'
+      source:     'BRRR Blueprint Funnel',
+      meta_fbc:        getCookie('_fbc'),
+      meta_fbp:        getCookie('_fbp'),
+      meta_user_agent: navigator.userAgent
     };
 
     fetch('https://services.leadconnectorhq.com/hooks/q6eq2jrEH8uxVEdsviAV/webhook-trigger/04e3f4f0-c379-4e4e-b309-d6651f692e0e', {
