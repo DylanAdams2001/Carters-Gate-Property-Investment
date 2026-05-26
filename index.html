@@ -505,6 +505,7 @@
   function selectCapital(btn, disqualify) {
     btn.closest('.options-grid').querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
     btn.classList.add('selected');
+    fd.capital = btn.textContent.trim();
     const dq = document.getElementById('disqualifyMsg');
     if (disqualify) { dq.style.display = 'block'; }
     else { dq.style.display = 'none'; setTimeout(() => goToStep(2), 360); }
@@ -512,6 +513,8 @@
   function quickSelect(btn, next) {
     btn.closest('.options-grid').querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
     btn.classList.add('selected');
+    if (next === 3) fd.timeline = btn.textContent.trim();
+    if (next === 4) fd.goal = btn.textContent.trim();
     setTimeout(() => goToStep(next), 360);
   }
   function submitForm() {
@@ -526,6 +529,24 @@
     else if (!em.value.trim() || !em.value.includes('@')) { em.classList.add('error'); em.focus(); valid = false; }
     else if (!ph.value.trim()) { ph.classList.add('error'); ph.focus(); valid = false; }
     if (!valid) return;
+
+    const payload = {
+      firstName:  fn.value.trim(),
+      lastName:   ln.value.trim(),
+      email:      em.value.trim(),
+      phone:      ph.value.trim(),
+      capital:    fd.capital  || '',
+      timeline:   fd.timeline || '',
+      goal:       fd.goal     || '',
+      source:     'BRRR Blueprint Funnel'
+    };
+
+    fetch('https://services.leadconnectorhq.com/hooks/q6eq2jrEH8uxVEdsviAV/webhook-trigger/04e3f4f0-c379-4e4e-b309-d6651f692e0e', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    }).catch(() => {}); // fire-and-forget — advance regardless
+
     goToStep(5);
   }
   function toggleFaq(btn) {
