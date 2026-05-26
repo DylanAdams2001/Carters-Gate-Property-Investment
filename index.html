@@ -322,9 +322,8 @@
       <div class="success-wrap">
         <div class="success-icon">&#10003;</div>
         <h3>Blueprint on its way!</h3>
-        <p>Your free BRRR Blueprint is being sent now. Take the next step and book your free 30-minute strategy call with a Carters Gate advisor.</p>
-        <a href="booking/" class="cta-btn">BOOK YOUR FREE STRATEGY CALL &rarr;</a>
-        <p class="trust-note" style="margin-top:14px">No pitch. No pressure. No commitment.</p>
+        <p>Taking you to your strategy call booking now&hellip;</p>
+        <p class="trust-note" style="margin-top:8px">No pitch. No pressure. No commitment.</p>
       </div>
     </div>
   </div>
@@ -557,6 +556,7 @@
     }).catch(() => {}); // fire-and-forget — advance regardless
 
     goToStep(5);
+    setTimeout(() => { window.location.href = 'booking/'; }, 2000);
   }
   function toggleFaq(btn) {
     const item = btn.parentElement;
