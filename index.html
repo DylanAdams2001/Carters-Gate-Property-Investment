@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Free BRRR Blueprint — Carters Gate Property Investment</title>
+  <title>Free BRRR Roadmap — Carters Gate Property Investment</title>
   <link rel="icon" type="image/jpeg" href="Assets/logo.jpg">
-  <meta name="description" content="Download the exact BRRR Blueprint our clients use to build self-funding UK property portfolios. Free instant access.">
+  <meta name="description" content="Download the exact BRRR Roadmap our clients use to build self-funding UK property portfolios. Free instant access.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -145,13 +145,13 @@
     .section-sub { font-size: 17px; color: var(--mid-grey); text-align: center; max-width: 580px; margin: 0 auto 52px; line-height: 1.7; }
 
     /* BLUEPRINT GRID */
-    .blueprint-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-    .blueprint-card { background: var(--white); border-radius: 14px; padding: 30px 28px; border-left: 4px solid var(--gold); box-shadow: 0 2px 12px rgba(0,0,0,0.06); transition: transform 0.2s, box-shadow 0.2s; }
-    .blueprint-card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(0,0,0,0.1); }
-    .blueprint-card.full { grid-column: span 2; }
+    .roadmap-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .roadmap-card { background: var(--white); border-radius: 14px; padding: 30px 28px; border-left: 4px solid var(--gold); box-shadow: 0 2px 12px rgba(0,0,0,0.06); transition: transform 0.2s, box-shadow 0.2s; }
+    .roadmap-card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(0,0,0,0.1); }
+    .roadmap-card.full { grid-column: span 2; }
     .bp-num { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 44px; color: var(--gold); opacity: 0.2; line-height: 1; margin-bottom: 6px; }
-    .blueprint-card h4 { font-size: 16px; font-weight: 700; color: var(--black); margin-bottom: 8px; line-height: 1.35; }
-    .blueprint-card p { font-size: 14px; color: var(--mid-grey); line-height: 1.7; }
+    .roadmap-card h4 { font-size: 16px; font-weight: 700; color: var(--black); margin-bottom: 8px; line-height: 1.35; }
+    .roadmap-card p { font-size: 14px; color: var(--mid-grey); line-height: 1.7; }
 
     /* TESTIMONIALS */
     .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
@@ -209,8 +209,8 @@
     @media (max-width: 700px) {
       .form-card { padding: 28px 20px; }
       .options-grid { grid-template-columns: 1fr; }
-      .blueprint-grid { grid-template-columns: 1fr; }
-      .blueprint-card.full { grid-column: span 1; }
+      .roadmap-grid { grid-template-columns: 1fr; }
+      .roadmap-card.full { grid-column: span 1; }
       .testimonials-grid { grid-template-columns: 1fr; }
       .hero { padding: 48px 16px 68px; }
       .section { padding: 60px 16px; }
@@ -233,11 +233,11 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-label">⭐ Free Download &mdash; Instant Access</div>
-  <h1>The Exact <em>BRRR Blueprint</em><br>Our Clients Use to Build a<br>Self-Funding UK Property Portfolio</h1>
-  <p class="hero-sub">Buy &middot; Renovate &middot; Rent &middot; Refinance &middot; Repeat &mdash; the complete system, yours free.</p>
+  <h1>The Exact <em>BRRR Roadmap</em><br>Our Clients Use to Build a<br>Self-Funding UK Property Portfolio</h1>
+  <p class="hero-sub">Buy &middot; Refurbish &middot; Rent &middot; Refinance &middot; Repeat &mdash; the complete system, yours free.</p>
   <div class="hero-trust">
     <div class="trust-pill"><span class="dot"></span> &#9733;&#9733;&#9733;&#9733;&#9733; 5.0 Google Rating</div>
-    <div class="trust-pill"><span class="dot"></span> 40+ Properties Delivered</div>
+    <div class="trust-pill"><span class="dot"></span> Buckinghamshire Specialists</div>
     <div class="trust-pill"><span class="dot"></span> Trusted by UK Investors</div>
   </div>
 
@@ -264,7 +264,7 @@
         <button class="option-btn" onclick="selectCapital(this, false)">&pound;200k+</button>
       </div>
       <div class="disqualify-msg" id="disqualifyMsg">
-        <strong>&#9888;&#65039; Heads up &mdash;</strong> our BRRR strategy typically requires a minimum of <strong>&pound;100,000</strong> in available capital to be viable in today&rsquo;s UK market. You can still download the blueprint to plan your path forward.
+        <strong>&#9888;&#65039; Heads up &mdash;</strong> our BRRR strategy typically requires a minimum of <strong>&pound;100,000</strong> in available capital to be viable in today&rsquo;s UK market. You can still download the roadmap to plan your path forward.
         <button class="disqualify-btn" onclick="goToStep(2)">DOWNLOAD THE BLUEPRINT ANYWAY &rarr;</button>
       </div>
     </div>
@@ -295,7 +295,7 @@
     <!-- Step 4 -->
     <div class="step" id="step4">
       <div class="step-eyebrow">Step 4 of 4 &mdash; Almost There!</div>
-      <h3>Where should we send your free BRRR Blueprint?</h3>
+      <h3>Where should we send your free BRRR Roadmap?</h3>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
         <div class="input-group">
           <label class="input-label" for="firstNameInput">First Name</label>
@@ -322,7 +322,7 @@
     <div class="step" id="step5">
       <div class="success-wrap">
         <div class="success-icon">&#10003;</div>
-        <h3>Blueprint on its way!</h3>
+        <h3>Roadmap on its way!</h3>
         <p>Taking you to your strategy call booking now&hellip;</p>
         <p class="trust-note" style="margin-top:8px">No pitch. No pressure. No commitment.</p>
       </div>
@@ -334,7 +334,7 @@
 <div class="proof-bar">
   <div class="proof-bar-inner">
     <div class="proof-item">&#9733;&#9733;&#9733;&#9733;&#9733; 5.0 Google Rating</div>
-    <div class="proof-item">&#127960;&#65039; 40+ Properties Delivered</div>
+    <div class="proof-item">&#127968; Buckinghamshire &amp; Surrounding Counties</div>
     <div class="proof-item">&#127468;&#127463; UK Investors Served</div>
     <div class="proof-item">&#163; &pound;3M+ Portfolio Value Built</div>
   </div>
@@ -344,30 +344,30 @@
 <section class="section section-grey">
   <div class="container">
     <span class="section-eyebrow">What&rsquo;s Inside</span>
-    <h2 class="section-title">Your Free BRRR Blueprint Covers</h2>
-    <p class="section-sub">A step-by-step system for building a self-funding UK property portfolio using the Buy, Renovate, Rent, Refinance, Repeat strategy.</p>
-    <div class="blueprint-grid">
-      <div class="blueprint-card">
+    <h2 class="section-title">Your Free BRRR Roadmap Covers</h2>
+    <p class="section-sub">A step-by-step system for building a self-funding UK property portfolio using the Buy, Refurbish, Rent, Refinance, Repeat strategy.</p>
+    <div class="roadmap-grid">
+      <div class="roadmap-card">
         <div class="bp-num">01</div>
         <h4>Deal Sourcing &mdash; Finding Below-Market-Value Properties</h4>
         <p>The exact criteria we use to identify undervalued properties in high-demand UK corridors &mdash; before they reach the open market.</p>
       </div>
-      <div class="blueprint-card">
+      <div class="roadmap-card">
         <div class="bp-num">02</div>
-        <h4>Renovation Strategy &mdash; Forcing Equity Efficiently</h4>
+        <h4>Refurbishment Strategy &mdash; Forcing Equity Efficiently</h4>
         <p>Which upgrades add the most value per pound spent and how to manage refurbishments to budget, on time, every time.</p>
       </div>
-      <div class="blueprint-card">
+      <div class="roadmap-card">
         <div class="bp-num">03</div>
         <h4>Rental Optimisation &mdash; Maximising Monthly Yield</h4>
         <p>How to structure tenancies to achieve 6&ndash;9% gross rental yields and attract long-term, reliable tenants in today&rsquo;s UK market.</p>
       </div>
-      <div class="blueprint-card">
+      <div class="roadmap-card">
         <div class="bp-num">04</div>
-        <h4>Refinancing Blueprint &mdash; Recycling Your Capital</h4>
+        <h4>Refinancing Roadmap &mdash; Recycling Your Capital</h4>
         <p>The exact refinancing strategy to pull equity tax-efficiently and recycle your original capital into your next deal.</p>
       </div>
-      <div class="blueprint-card full">
+      <div class="roadmap-card full">
         <div class="bp-num">05</div>
         <h4>The Repeat System &mdash; Scaling Without Tying Up Capital</h4>
         <p>How our clients compound their portfolios deal by deal &mdash; using the same initial capital &mdash; creating a self-funding growth engine that builds wealth while you focus on your career.</p>
@@ -381,7 +381,7 @@
   <div class="container">
     <span class="section-eyebrow">Client Results</span>
     <h2 class="section-title">What Our Investors Are Saying</h2>
-    <p class="section-sub">Real outcomes from real UK investors who followed the BRRR blueprint with Carters Gate.</p>
+    <p class="section-sub">Real outcomes from real UK investors who followed the BRRR roadmap with Carters Gate.</p>
     <div class="testimonials-grid">
       <div class="t-card">
         <div class="t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
@@ -410,7 +410,7 @@
       </div>
       <div class="t-card">
         <div class="t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="t-text">&ldquo;I was sceptical at first but the blueprint was genuinely eye-opening. &pound;47k in equity created in the first 10 months. We&rsquo;re already planning deal two with Carters Gate.&rdquo;</p>
+        <p class="t-text">&ldquo;I was sceptical at first but the roadmap was genuinely eye-opening. &pound;47k in equity created in the first 10 months. We&rsquo;re already planning deal two with Carters Gate.&rdquo;</p>
         <div class="t-author"><div class="t-avatar">RB</div><div><div class="t-name">Rachel B.</div><div class="t-role">GP &middot; Sheffield</div></div></div>
       </div>
       <div class="t-card">
@@ -425,7 +425,7 @@
       </div>
       <div class="t-card">
         <div class="t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="t-text">&ldquo;We&rsquo;d been stuck with one buy-to-let for 5 years. The BRRR blueprint changed everything. Now we have four properties and a clear roadmap to financial freedom.&rdquo;</p>
+        <p class="t-text">&ldquo;We&rsquo;d been stuck with one buy-to-let for 5 years. The BRRR roadmap changed everything. Now we have four properties and a clear roadmap to financial freedom.&rdquo;</p>
         <div class="t-author"><div class="t-avatar">NP</div><div><div class="t-name">Niall P.</div><div class="t-role">Business Owner &middot; Glasgow</div></div></div>
       </div>
     </div>
@@ -440,15 +440,15 @@
     <div class="faq-list">
       <div class="faq-item">
         <button class="faq-trigger" onclick="toggleFaq(this)">What exactly is the BRRR strategy?<span class="faq-icon">+</span></button>
-        <div class="faq-body">BRRR stands for Buy, Renovate, Rent, Refinance, Repeat. You purchase a below-market-value property, add value through renovation, tenant it to generate rental income, then refinance to release equity &mdash; allowing you to recycle your original capital into the next deal. Done correctly, it&rsquo;s one of the most powerful wealth-compounding strategies available to UK investors.</div>
+        <div class="faq-body">BRRR stands for Buy, Refurbish, Rent, Refinance, Repeat. You purchase a below-market-value property &mdash; typically with cash or short-term bridging finance &mdash; then add value through refurbishment (and sometimes an extension or loft conversion). Once tenanted, you refinance onto a buy-to-let mortgage based on the new, higher valuation, releasing the majority of your original capital to redeploy into the next deal. The strategy can also work on properties purchased with a mortgage, though capital recycling tends to be most effective on cash or bridged acquisitions. Done correctly, it&rsquo;s one of the most powerful wealth-compounding strategies available to UK investors.</div>
       </div>
       <div class="faq-item">
         <button class="faq-trigger" onclick="toggleFaq(this)">Is the BRRR strategy legal and viable in the UK?<span class="faq-icon">+</span></button>
-        <div class="faq-body">Absolutely. BRRR is a fully legitimate and widely practised UK investment strategy. When structured correctly with the right finance products, legal framework, and professional advice, it&rsquo;s one of the most tax-efficient ways to grow a UK property portfolio. Our blueprint covers all relevant compliance considerations in detail.</div>
+        <div class="faq-body">Absolutely. BRRR is a fully legitimate and widely practised UK investment strategy. When structured correctly with the right finance products, legal framework, and professional advice, it&rsquo;s one of the most tax-efficient ways to grow a UK property portfolio. Our roadmap covers all relevant compliance considerations in detail.</div>
       </div>
       <div class="faq-item">
         <button class="faq-trigger" onclick="toggleFaq(this)">How much capital do I need to start?<span class="faq-icon">+</span></button>
-        <div class="faq-body">We recommend a minimum of &pound;100,000 in available capital for BRRR to be viable in today&rsquo;s UK market. This covers your deposit (typically 20&ndash;25% of purchase price), renovation budget, bridging or refurbishment finance costs, and legal fees. Our blueprint breaks down exact numbers for different deal sizes and regions.</div>
+        <div class="faq-body">We recommend a minimum of &pound;100,000 in available capital for BRRR to be viable in today&rsquo;s UK market. This covers your deposit (typically 20&ndash;25% of purchase price), renovation budget, bridging or refurbishment finance costs, and legal fees. Our roadmap breaks down exact numbers for different deal sizes and regions.</div>
       </div>
       <div class="faq-item">
         <button class="faq-trigger" onclick="toggleFaq(this)">What types of properties work best for BRRR?<span class="faq-icon">+</span></button>
@@ -469,7 +469,7 @@
 <!-- BOTTOM CTA -->
 <section class="bottom-cta">
   <h2>Ready to Build Your <em>Property Portfolio?</em></h2>
-  <p>Download the free BRRR Blueprint and take the first step toward a self-funding UK property portfolio.</p>
+  <p>Download the free BRRR Roadmap and take the first step toward a self-funding UK property portfolio.</p>
   <button class="scroll-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">DOWNLOAD YOUR FREE BLUEPRINT &rarr;</button>
 </section>
 
@@ -544,7 +544,7 @@
       capital:    fd.capital  || '',
       timeline:   fd.timeline || '',
       goal:       fd.goal     || '',
-      source:     'BRRR Blueprint Funnel',
+      source:     'BRRR Roadmap Funnel',
       meta_fbc:        getCookie('_fbc'),
       meta_fbp:        getCookie('_fbp'),
       meta_user_agent: navigator.userAgent
