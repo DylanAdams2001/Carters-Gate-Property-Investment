@@ -170,22 +170,25 @@
     .roadmap-card h4 { font-size: 16px; font-weight: 700; color: var(--black); margin-bottom: 8px; line-height: 1.35; }
     .roadmap-card p { font-size: 14px; color: var(--mid-grey); line-height: 1.7; }
 
-    /* TESTIMONIALS MARQUEE */
-    .t-slider-wrap {
-      overflow: hidden;
-      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
-      mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
-    }
-    .t-track { display: flex; gap: 24px; will-change: transform; }
-    .t-slide { min-width: 540px; max-width: 540px; flex-shrink: 0; box-sizing: border-box; }
-    .t-card { background: var(--white); border-radius: 20px; padding: 40px 44px; box-shadow: 0 6px 32px rgba(0,0,0,0.09); height: 100%; box-sizing: border-box; }
+    /* TESTIMONIALS SLIDER */
+    .t-slider-wrap { overflow: hidden; }
+    .t-track { display: flex; transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1); will-change: transform; }
+    .t-slide { min-width: 100%; box-sizing: border-box; }
+    .t-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .t-card { background: var(--white); border-radius: 20px; padding: 36px 40px; box-shadow: 0 6px 32px rgba(0,0,0,0.09); display: flex; flex-direction: column; }
     .t-quote { font-size: 64px; line-height: 0.8; color: var(--gold); font-family: Georgia, serif; opacity: 0.45; margin-bottom: 6px; display: block; }
     .t-stars { color: var(--gold); font-size: 14px; margin-bottom: 16px; letter-spacing: 2px; }
-    .t-text { font-size: 16px; color: #333; line-height: 1.8; font-style: italic; margin-bottom: 24px; }
+    .t-text { font-size: 15px; color: #333; line-height: 1.82; font-style: italic; margin-bottom: 24px; flex: 1; }
     .t-author { display: flex; align-items: center; gap: 14px; }
     .t-avatar { width: 46px; height: 46px; border-radius: 50%; background: var(--gold); display: flex; align-items: center; justify-content: center; font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 13px; color: var(--black); flex-shrink: 0; }
     .t-name { font-weight: 700; font-size: 15px; color: var(--black); }
     .t-role { font-size: 13px; color: var(--mid-grey); margin-top: 2px; }
+    .t-controls { display: flex; align-items: center; justify-content: center; gap: 20px; margin-top: 32px; }
+    .t-arrow { width: 44px; height: 44px; border-radius: 50%; background: var(--black); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 22px; line-height: 1; transition: background 0.2s, color 0.2s; flex-shrink: 0; }
+    .t-arrow:hover { background: var(--gold); color: var(--black); }
+    .t-dots { display: flex; gap: 8px; align-items: center; }
+    .t-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(0,0,0,0.15); border: none; cursor: pointer; padding: 0; transition: all 0.3s ease; }
+    .t-dot.active { background: var(--gold); width: 24px; border-radius: 4px; }
 
     /* FAQ */
     .faq-list { max-width: 720px; margin: 0 auto; }
@@ -235,9 +238,8 @@
       .options-grid { grid-template-columns: 1fr; }
       .roadmap-grid { grid-template-columns: 1fr; }
       .roadmap-card.full { grid-column: span 1; }
-      .t-slide { min-width: 85vw; max-width: 85vw; }
-      .t-card { padding: 28px 24px; }
-      .t-text { font-size: 15px; }
+      .t-pair { grid-template-columns: 1fr; }
+      .t-card { padding: 28px 22px; }
       .hero { padding: 48px 16px 68px; }
       .section { padding: 60px 16px; }
       .proof-bar-inner { gap: 18px; }
@@ -412,67 +414,64 @@
     <div class="t-slider-wrap">
       <div class="t-track" id="tTrack">
 
+        <!-- Slide 1 -->
         <div class="t-slide">
-          <div class="t-card">
-            <span class="t-quote">&ldquo;</span>
-            <div class="t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <p class="t-text">Working with Chris &amp; Thandie at Carters Gate gave me the confidence to invest in property before retirement. I now have an additional income stream and real peace of mind for the future.</p>
-            <div class="t-author">
-              <div class="t-avatar">FK</div>
-              <div>
-                <div class="t-name">Faith K.</div>
-                <div class="t-role">Recently Retired &middot; NHS</div>
+          <div class="t-pair">
+            <div class="t-card">
+              <span class="t-quote">&ldquo;</span>
+              <div class="t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p class="t-text">Working with Chris &amp; Thandie at Carters Gate gave me the confidence to invest in property before retirement. I now have an additional income stream and real peace of mind for the future.</p>
+              <div class="t-author">
+                <div class="t-avatar">FK</div>
+                <div><div class="t-name">Faith K.</div><div class="t-role">Recently Retired &middot; NHS</div></div>
+              </div>
+            </div>
+            <div class="t-card">
+              <span class="t-quote">&ldquo;</span>
+              <div class="t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p class="t-text">As a busy professional living in Dubai, I needed people I could trust to guide me through UK property investment. Working with Chris &amp; Thandie made the whole process clear, professional, and completely stress-free.</p>
+              <div class="t-author">
+                <div class="t-avatar">MB</div>
+                <div><div class="t-name">Michelle B.</div><div class="t-role">Professional &middot; Dubai</div></div>
               </div>
             </div>
           </div>
         </div>
 
+        <!-- Slide 2 -->
         <div class="t-slide">
-          <div class="t-card">
-            <span class="t-quote">&ldquo;</span>
-            <div class="t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <p class="t-text">As a busy professional living in Dubai, I needed people I could trust to guide me through UK property investment. Working with Chris &amp; Thandie made the whole process clear, professional, and completely stress-free.</p>
-            <div class="t-author">
-              <div class="t-avatar">MB</div>
-              <div>
-                <div class="t-name">Michelle B.</div>
-                <div class="t-role">Professional &middot; Dubai</div>
+          <div class="t-pair">
+            <div class="t-card">
+              <span class="t-quote">&ldquo;</span>
+              <div class="t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p class="t-text">I&rsquo;d been considering property investment for years but never took action. Chris &amp; Thandie at Carters Gate Properties helped me understand the BRRR strategy, avoid costly mistakes, and finally start building long-term wealth.</p>
+              <div class="t-author">
+                <div class="t-avatar">DG</div>
+                <div><div class="t-name">David G.</div><div class="t-role">UK Property Investor</div></div>
               </div>
             </div>
-          </div>
-        </div>
-
-        <div class="t-slide">
-          <div class="t-card">
-            <span class="t-quote">&ldquo;</span>
-            <div class="t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <p class="t-text">I&rsquo;d been considering property investment for years but never took action. Chris &amp; Thandie at Carters Gate Properties helped me understand the BRRR strategy, avoid costly mistakes, and finally start building long-term wealth.</p>
-            <div class="t-author">
-              <div class="t-avatar">DG</div>
-              <div>
-                <div class="t-name">David G.</div>
-                <div class="t-role">UK Property Investor</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="t-slide">
-          <div class="t-card">
-            <span class="t-quote">&ldquo;</span>
-            <div class="t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <p class="t-text">Working with Thandie and Chris at Carters Gate Properties has been a dream. They took the time to go through my investment options and run through various property deals in Buckinghamshire. They are dedicated, authentic and have an amazing work ethic. 100% recommend.</p>
-            <div class="t-author">
-              <div class="t-avatar">&#9733;</div>
-              <div>
-                <div class="t-name">Verified Client</div>
-                <div class="t-role">Buckinghamshire</div>
+            <div class="t-card">
+              <span class="t-quote">&ldquo;</span>
+              <div class="t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p class="t-text">Working with Thandie and Chris at Carters Gate Properties has been a dream. They took the time to go through my investment options and run through various property deals in Buckinghamshire. They are dedicated, authentic and have an amazing work ethic. 100% recommend.</p>
+              <div class="t-author">
+                <div class="t-avatar">&#9733;</div>
+                <div><div class="t-name">Verified Client</div><div class="t-role">Buckinghamshire</div></div>
               </div>
             </div>
           </div>
         </div>
 
       </div>
+    </div>
+
+    <div class="t-controls">
+      <button class="t-arrow" onclick="tSlide(-1)" aria-label="Previous">&#8249;</button>
+      <div class="t-dots">
+        <button class="t-dot active" onclick="tGoTo(0)" aria-label="Slide 1"></button>
+        <button class="t-dot" onclick="tGoTo(1)" aria-label="Slide 2"></button>
+      </div>
+      <button class="t-arrow" onclick="tSlide(1)" aria-label="Next">&#8250;</button>
     </div>
 
 
@@ -613,40 +612,24 @@
     if (!was) item.classList.add('open');
   }
 
-  // Continuous testimonials marquee
-  (function() {
-    var wrap  = document.querySelector('.t-slider-wrap');
-    var track = document.getElementById('tTrack');
-    if (!wrap || !track) return;
+  // Testimonials slider
+  var tCurrent = 0;
+  var tTotal   = 2;
+  var tTimer   = setInterval(function() { tGoTo(tCurrent + 1); }, 7000);
 
-    // Duplicate slides for seamless looping
-    var originals = Array.from(track.querySelectorAll('.t-slide'));
-    originals.forEach(function(s) { track.appendChild(s.cloneNode(true)); });
+  function tGoTo(n) {
+    tCurrent = (n + tTotal) % tTotal;
+    document.getElementById('tTrack').style.transform = 'translateX(-' + (tCurrent * 100) + '%)';
+    document.querySelectorAll('.t-dot').forEach(function(d, i) {
+      d.classList.toggle('active', i === tCurrent);
+    });
+  }
 
-    var pos    = 0;
-    var paused = false;
-    var GAP    = 24;
-    var SPEED  = 0.45;
-
-    wrap.addEventListener('mouseenter', function() { paused = true; });
-    wrap.addEventListener('mouseleave', function() { paused = false; });
-
-    function tick() {
-      if (!paused) {
-        pos -= SPEED;
-        var first     = track.querySelector('.t-slide');
-        var slideW    = first.offsetWidth + GAP;
-        if (pos <= -slideW) {
-          pos += slideW;
-          track.appendChild(first);
-        }
-        track.style.transform = 'translateX(' + pos + 'px)';
-      }
-      requestAnimationFrame(tick);
-    }
-
-    requestAnimationFrame(tick);
-  })();
+  function tSlide(dir) {
+    clearInterval(tTimer);
+    tGoTo(tCurrent + dir);
+    tTimer = setInterval(function() { tGoTo(tCurrent + 1); }, 7000);
+  }
 </script>
 </body>
 </html>
